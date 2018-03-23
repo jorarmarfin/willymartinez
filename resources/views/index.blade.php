@@ -132,14 +132,14 @@
 
             <div role="main" class="main">
 
-            <section id="about-me" class="section section-no-border section-parallax custom-section-padding-1 custom-position-1 custom-xs-bg-size-cover parallax-no-overflow m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5}" data-image-src="img/demos/resume/about-me/about-me-bg-1.jpg">
+            <section id="about-me" class="section section-no-border section-parallax custom-section-padding-1 custom-position-1 custom-xs-bg-size-cover parallax-no-overflow m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5}" data-image-src="{{ $datos->fondo }}">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-4 custom-sm-margin-bottom-1">
-                            <img src="img/demos/resume/about-me/me.jpg" class="img-fluid custom-border custom-image-position-2 custom-box-shadow-4" alt />
+                            <img src="{{ $datos->foto }}" class="img-fluid custom-border custom-image-position-2 custom-box-shadow-4" alt />
                         </div>
                         <div class="col-lg-6 col-xl-5">
-                            <h1 class="text-color-primary custom-font-size-1">Adam Doe</h1>
+                            <h1 class="text-color-primary custom-font-size-1">{{ $datos->nombre_corto }}</h1>
                             <p class="text-color-light font-weight-normal custom-font-size-2 custom-margin-bottom-1">Chief Product Officer at Okler Themes</p>
                             <span class="custom-about-me-infos">
                                 <span class="custom-text-color-1 text-uppercase">Greater New York area</span>
@@ -157,7 +157,7 @@
                             </span>
                         </div>
                         <div class="col-lg-2 col-xl-3 d-none d-lg-block">
-                            <img src="img/demos/resume/about-me/mouse.png" custom-anim class="img-fluid custom-image-pos-1" alt />
+                            <img src="{{ $datos->imagen_secundaria }}" custom-anim class="img-fluid custom-image-pos-1" alt />
                         </div>
                     </div>
                 </div>

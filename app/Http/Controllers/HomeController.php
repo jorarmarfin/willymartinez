@@ -2,24 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use GuzzleHttp\Client;
+use App\Repositories\Curriculum;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-	private $client;
+	private $curriculum;
 
-	public function __construct()
+	public function __construct(Curriculum $curriculum)
 	{
-		$this->client = new Client([
-			'base_uri' => 'https://myapp.com/api/'
-		]);
+		$this->curriculum = $curriculum;
 	}
-
 
     public function index()
     {
-    	$client = new Client();
-    	return view('index');
+    	$datos = $this->curriculum->getMyData();
+    	return view('index',compact('datos'));
     }
 }
