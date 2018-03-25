@@ -71,37 +71,37 @@
                                                     <li>
                                                         <a data-hash href="#about-me" class="nav-link text-color-dark background-color-primary">
                                                             <i class="icon-home icons"></i>
-                                                            <span class="custom-tooltip">About Me</span>
+                                                            <span class="custom-tooltip">Sobre Mi</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a data-hash href="#experience" class="nav-link text-color-dark background-color-primary">
                                                             <i class="icon-eye icons"></i>
-                                                            <span class="custom-tooltip">Experience</span>
+                                                            <span class="custom-tooltip">Experiencia</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a data-hash href="#education" class="nav-link text-color-dark background-color-primary">
                                                             <i class="icon-briefcase icons"></i>
-                                                            <span class="custom-tooltip">Education</span>
+                                                            <span class="custom-tooltip">Educación</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a data-hash href="#skills" class="nav-link text-color-dark background-color-primary">
                                                             <i class="icon-graduation icons"></i>
-                                                            <span class="custom-tooltip">Skills</span>
+                                                            <span class="custom-tooltip">Habilidades e idiomas</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a data-hash href="#portfolio" class="nav-link text-color-dark background-color-primary">
                                                             <i class="icon-diamond icons"></i>
-                                                            <span class="custom-tooltip">Portfolio</span>
+                                                            <span class="custom-tooltip">Portafolio</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a data-hash href="#recommendations" class="nav-link text-color-dark background-color-primary">
                                                             <i class="icon-pencil icons"></i>
-                                                            <span class="custom-tooltip">Recommendations</span>
+                                                            <span class="custom-tooltip">Recomendaciones</span>
                                                         </a>
                                                     </li>
                                                     <li>
@@ -113,7 +113,7 @@
                                                     <li>
                                                         <a data-hash href="#say-hello" class="nav-link text-color-dark background-color-primary">
                                                             <i class="icon-envelope-open icons"></i>
-                                                            <span class="custom-tooltip">Say Hello</span>
+                                                            <span class="custom-tooltip">Contactame</span>
                                                         </a>
                                                     </li>
                                                 </ul>
@@ -132,7 +132,7 @@
 
             <div role="main" class="main">
 
-            <section id="about-me" class="section section-no-border section-parallax custom-section-padding-1 custom-position-1 custom-xs-bg-size-cover parallax-no-overflow m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5}" data-image-src="{{ $datos->fondo }}">
+            <section id="about-me" class="section section-no-border section-parallax custom-section-padding-1 custom-position-1 custom-xs-bg-size-cover parallax-no-overflow m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5}" data-image-src="{{ $configuracion->fondo }}">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-4 custom-sm-margin-bottom-1">
@@ -157,7 +157,7 @@
                             </span>
                         </div>
                         <div class="col-lg-2 col-xl-3 d-none d-lg-block">
-                            <img src="{{ $datos->imagen_secundaria }}" custom-anim class="img-fluid custom-image-pos-1" alt />
+                            <img src="{{ $configuracion->imagen_secundaria }}" custom-anim class="img-fluid custom-image-pos-1" alt />
                         </div>
                     </div>
                 </div>
@@ -222,16 +222,16 @@
                                     <div class="col-md-6">
                                         <ul class="custom-list-style-1 p-0 mb-0">
                                             <li>
-                                                <span class="text-color-dark">Birthday:</span>
-                                                <span class="custom-text-color-2">1990 October 2</span>
+                                                <span class="text-color-dark">Fecha Nacimiento:</span>
+                                                <span class="custom-text-color-2">{{ $datos->fecha_nacimiento }}</span>
                                             </li>
                                             <li>
-                                                <span class="text-color-dark">Marital:</span>
-                                                <span class="custom-text-color-2">Single</span>
+                                                <span class="text-color-dark">Estado Civil:</span>
+                                                <span class="custom-text-color-2">{{ $datos->estado_civil }}</span>
                                             </li>
                                             <li>
-                                                <span class="text-color-dark">Nationality:</span>
-                                                <span class="custom-text-color-2">American</span>
+                                                <span class="text-color-dark">Nacionalidad:</span>
+                                                <span class="custom-text-color-2">{{ $datos->nacionalidad }}</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -242,31 +242,27 @@
                                                 <span class="custom-text-color-2"><a class="custom-text-color-2" href="skype:yourskype?chat">yourskype</a></span>
                                             </li>
                                             <li>
-                                                <span class="text-color-dark">PHONE:</span>
-                                                <span class="custom-text-color-2"><a class="custom-text-color-2" href="tel:123456789">123-456-789</a></span>
+                                                <span class="text-color-dark">Telefono:</span>
+                                                <span class="custom-text-color-2"><a class="custom-text-color-2" href="tel:123456789">{{ $datos->telefono }}</a></span>
                                             </li>
                                             <li>
                                                 <span class="text-color-dark">EMAIL:</span>
-                                                <span class="custom-text-color-2"><a class="custom-text-color-2" href="mailto:me@domain.com">me@domain.com</a></span>
+                                                <span class="custom-text-color-2"><a class="custom-text-color-2" href="mailto:{{ $datos->email }}">{{ $datos->email }}</a></span>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
 
-                            <h2 class="text-color-quaternary font-weight-extra-bold text-uppercase">About Me</h2>
+                            <h2 class="text-color-quaternary font-weight-extra-bold text-uppercase">Sobre Mi</h2>
 
-                            <p class="custom-text-color-2">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+                            <p class="custom-text-color-2">{!! $datos->resumen !!}</p>
 
                             <div class="about-me-more" id="aboutMeMore">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt nulla tortor, a imperdiet enim tristique nec. Nulla lobortis leo eget metus dapibus sodales. Sed placerat vitae dui vitae vehicula. Quisque in tincidunt ligula, nec dignissim arcu. Praesent aliquam velit vel libero dictum, non sollicitudin lectus mollis. Morbi sollicitudin auctor gravida. Vivamus vitae dui non lorem euismod pretium. Morbi congue sem sed ex iaculis, nec mattis felis pretium. Nullam molestie libero id odio blandit sodales. Suspendisse non mauris et felis molestie placerat aliquet a risus. Aliquam ac leo tempus, hendrerit eros mollis, gravida est.</p>
-
-                                <p>Proin euismod ipsum a tellus condimentum dapibus. Integer porttitor felis elit, eget rutrum ligula commodo quis. Praesent ultricies neque eu mi congue blandit. Nulla feugiat feugiat aliquet. Morbi sed mattis erat. Nullam scelerisque molestie eros, id tristique felis iaculis non. Duis pellentesque neque eget iaculis varius. Donec at nisl semper, aliquam est id, tincidunt lacus. Donec at erat purus.</p>
-
-                                <p>Morbi tincidunt nunc non diam porta, at fermentum orci bibendum. Donec arcu nisi, ornare nec commodo vitae, sollicitudin sed magna. Cras sit amet justo et nulla pulvinar laoreet. Phasellus scelerisque, metus id posuere vulputate, diam tellus iaculis sapien, eget scelerisque ipsum libero convallis velit. Duis lorem ligula, faucibus quis tellus nec, fringilla ultricies leo. Etiam tempus congue magna. Suspendisse porta dictum tortor, eu volutpat ipsum eleifend nec. Aliquam dapibus lorem luctus, cursus libero imperdiet, mattis nunc. Sed in ipsum diam. Quisque efficitur metus purus, vitae fermentum lacus venenatis id.</p>
+                                {!! $datos->sobre_mi !!}
                             </div>
 
-                            <a id="aboutMeMoreBtn" class="btn btn-tertiary text-uppercase custom-btn-style-1 text-1" href="#">View More</a>
+                            <a id="aboutMeMoreBtn" class="btn btn-tertiary text-uppercase custom-btn-style-1 text-1" href="#">Ver Más</a>
 
                         </div>
                     </div>

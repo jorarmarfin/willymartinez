@@ -17,11 +17,18 @@ class Curriculum
 		]);
 	}
 
-
-	public function getMyData()
+	public function getMyData($id)
 	{
-		$response = $this->client->request('GET','/api/mydata');
-		return json_decode($response->getBody()->getContents())[0];
+		return $this->getRequest('/api/'.$id.'/mydata')[0];
+	}
+	public function getMyConfiguration($id)
+	{
+		return $this->getRequest('/api/'.$id.'/configuracion')[0];
+	}
 
+	public function getRequest($uri,$type='GET')
+	{
+		$response = $this->client->request($type,$uri);
+		return json_decode($response->getBody()->getContents());
 	}
 }
