@@ -21,9 +21,16 @@ class Curriculum
 	{
 		return $this->getRequest('/api/'.$id.'/mydata')[0];
 	}
+
 	public function getMyConfiguration($id)
 	{
 		return $this->getRequest('/api/'.$id.'/configuracion')[0];
+	}
+
+	public function getMyExperiencia($id)
+	{
+
+		return $this->getRequest('/api/'.$id.'/experiencia');
 	}
 
 	public function getRequest($uri,$type='GET')

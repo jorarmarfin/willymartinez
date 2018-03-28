@@ -21,6 +21,15 @@ class HomeController extends Controller
     {
     	$datos = $this->curriculum->getMyData($this->iduser);
     	$configuracion = $this->curriculum->getMyConfiguration($this->iduser);
-    	return view('index',compact('datos','configuracion'));
+    	$experiencia = $this->curriculum->getMyExperiencia($this->iduser);
+    	$llave = '';
+    	foreach ($experiencia as $key => $value) {
+    		if ($value->destacar == 1) {
+    			$llave = $key;
+    		}
+    	}
+    	$exp_des = $experiencia[$llave];
+
+    	return view('index',compact('datos','configuracion','experiencia','exp_des'));
     }
 }

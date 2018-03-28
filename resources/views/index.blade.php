@@ -140,10 +140,10 @@
                         </div>
                         <div class="col-lg-6 col-xl-5">
                             <h1 class="text-color-primary custom-font-size-1">{{ $datos->nombre_corto }}</h1>
-                            <p class="text-color-light font-weight-normal custom-font-size-2 custom-margin-bottom-1">Chief Product Officer at Okler Themes</p>
+                            <p class="text-color-light font-weight-normal custom-font-size-2 custom-margin-bottom-1">{{ $exp_des->cargo }}</p>
                             <span class="custom-about-me-infos">
-                                <span class="custom-text-color-1 text-uppercase">Greater New York area</span>
-                                <span class="custom-text-color-1 text-uppercase mb-3">Information Technology &amp; Services</span>
+                                <span class="custom-text-color-1 text-uppercase">{{ $exp_des->institucion }}</span>
+                                <span class="custom-text-color-1 text-uppercase mb-3">{{ $exp_des->rubro }}</span>
                                 <span class="custom-text-color-1 text-uppercase">
                                     <strong class="text-color-light">Previous: </strong>
                                     Front-End Developer at Porto
@@ -187,7 +187,7 @@
                             <a data-hash href="#say-hello" class="text-decoration-none">
                                 <span class="custom-nav-button text-color-dark">
                                     <i class="icon-earphones-alt icons text-color-primary"></i>
-                                    Contact Information
+                                    Información de Contacto
                                 </span>
                             </a>
                         </div>
@@ -195,7 +195,7 @@
                             <a data-hash href="#say-hello" class="text-decoration-none">
                                 <span class="custom-nav-button custom-divisors text-color-dark">
                                     <i class="icon-envelope-open icons text-color-primary"></i>
-                                    Send Message
+                                    Enviar Mensaje
                                 </span>
                             </a>
                         </div>
@@ -203,7 +203,7 @@
                             <a href="#" class="text-decoration-none">
                                 <span class="custom-nav-button text-color-dark">
                                     <i class="icon-cloud-download icons text-color-primary"></i>
-                                    Download Resume
+                                    Descargar CV
                                 </span>
                             </a>
                         </div>
@@ -247,7 +247,7 @@
                                             </li>
                                             <li>
                                                 <span class="text-color-dark">EMAIL:</span>
-                                                <span class="custom-text-color-2"><a class="custom-text-color-2" href="mailto:{{ $datos->email }}">{{ $datos->email }}</a></span>
+                                                <span class="custom-text-color-2"><a class="custom-text-color-2" href="mailto:{{ $datos->email }}" style="font-size: 11px; text-decoration:  unset; text-transform:  lowercase;">{{ $datos->email }}</a></span>
                                             </li>
                                         </ul>
                                     </div>
@@ -273,78 +273,34 @@
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <h2 class="text-color-quaternary text-uppercase font-weight-extra-bold">Experience</h2>
+                            <h2 class="text-color-quaternary text-uppercase font-weight-extra-bold">Experiencia</h2>
                             <section class="timeline custom-timeline" id="timeline">
                                 <div class="timeline-body">
-                                    <article class="timeline-box right custom-box-shadow-2">
-                                        <div class="row">
-                                            <div class="experience-info col-lg-3 col-sm-5 background-color-primary">
-                                                <span class="from text-color-dark text-uppercase">
-                                                    From
-                                                    <span class="font-weight-semibold">Sep 2012</span>
-                                                </span>
-                                                <span class="to text-color-dark text-uppercase">
-                                                    To
-                                                    <span class="font-weight-semibold">Present</span>
-                                                </span>
-                                                <p class="text-color-dark">(3 Years 9 Months)</p>
-                                                <span class="company text-color-dark font-weight-semibold">
-                                                    Okler Themes
-                                                    <span class="company-location text-color-dark font-weight-normal text-uppercase">Greater New York</span>
-                                                </span>
+                                    @foreach ($experiencia as $item)
+                                        <article class="timeline-box right custom-box-shadow-2">
+                                            <div class="row">
+                                                <div class="experience-info col-lg-3 col-sm-5 background-color-primary">
+                                                    <span class="from text-color-dark text-uppercase">
+                                                        Desde
+                                                        <span class="font-weight-semibold">{{ getDateText($item->fecha_inicio) }}</span>
+                                                    </span>
+                                                    <span class="to text-color-dark text-uppercase">
+                                                        Hasta
+                                                        <span class="font-weight-semibold">{{ getDateText($item->fecha_fin) }}</span>
+                                                    </span>
+                                                    <p class="text-color-dark">(3 Years 9 Months)</p>
+                                                    <span class="company text-color-dark font-weight-semibold">
+                                                        {{ $item->institucion }}
+                                                        <span class="company-location text-color-dark font-weight-normal text-uppercase">{{ $item->rubro }}</span>
+                                                    </span>
+                                                </div>
+                                                <div class="experience-description col-lg-9 col-sm-7 background-color-light">
+                                                    <h4 class="text-color-dark font-weight-semibold">{{ $item->cargo }}</h4>
+                                                    {!! $item->body !!}
+                                                </div>
                                             </div>
-                                            <div class="experience-description col-lg-9 col-sm-7 background-color-light">
-                                                <h4 class="text-color-dark font-weight-semibold">Chief Product Officer</h4>
-                                                <p class="custom-text-color-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt nulla tortor, a imperdiet enim tristique nec. Nulla lobortis leo eget metus dapibus sodales. Sed placerat vitae dui vitae vehicula. Quisque in tincidunt ligula, nec dignissim arcu.</p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <article class="timeline-box right custom-box-shadow-2">
-                                        <div class="row">
-                                            <div class="experience-info col-lg-3 col-sm-5 background-color-primary">
-                                                <span class="from text-color-dark text-uppercase">
-                                                    From
-                                                    <span class="font-weight-semibold">Sep 2012</span>
-                                                </span>
-                                                <span class="to text-color-dark text-uppercase">
-                                                    To
-                                                    <span class="font-weight-semibold">Present</span>
-                                                </span>
-                                                <p class="text-color-dark">(3 Years 9 Months)</p>
-                                                <span class="company text-color-dark font-weight-semibold">
-                                                    Okler Themes
-                                                    <span class="company-location text-color-dark font-weight-normal text-uppercase">Greater New York</span>
-                                                </span>
-                                            </div>
-                                            <div class="experience-description col-lg-9 col-sm-7 background-color-light">
-                                                <h4 class="text-color-dark font-weight-semibold">Chief Product Officer</h4>
-                                                <p class="custom-text-color-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt nulla tortor, a imperdiet enim tristique nec. Nulla lobortis leo eget metus dapibus sodales. Sed placerat vitae dui vitae vehicula. Quisque in tincidunt ligula, nec dignissim arcu.</p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <article class="timeline-box right custom-box-shadow-2">
-                                        <div class="row">
-                                            <div class="experience-info col-lg-3 col-sm-5 background-color-primary">
-                                                <span class="from text-color-dark text-uppercase">
-                                                    From
-                                                    <span class="font-weight-semibold">Sep 2012</span>
-                                                </span>
-                                                <span class="to text-color-dark text-uppercase">
-                                                    To
-                                                    <span class="font-weight-semibold">Present</span>
-                                                </span>
-                                                <p class="text-color-dark">(3 Years 9 Months)</p>
-                                                <span class="company text-color-dark font-weight-semibold">
-                                                    Okler Themes
-                                                    <span class="company-location text-color-dark font-weight-normal text-uppercase">Greater New York</span>
-                                                </span>
-                                            </div>
-                                            <div class="experience-description col-lg-9 col-sm-7 background-color-light">
-                                                <h4 class="text-color-dark font-weight-semibold">Chief Product Officer</h4>
-                                                <p class="custom-text-color-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt nulla tortor, a imperdiet enim tristique nec. Nulla lobortis leo eget metus dapibus sodales. Sed placerat vitae dui vitae vehicula. Quisque in tincidunt ligula, nec dignissim arcu.</p>
-                                            </div>
-                                        </div>
-                                    </article>
+                                        </article>
+                                    @endforeach
                                     <div class="timeline-bar"></div>
                                 </div>
                             </section>
