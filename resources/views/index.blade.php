@@ -217,7 +217,7 @@
                         <div class="col">
 
                             <div class="custom-box-details background-color-light custom-box-shadow-1 col-lg-6 ml-5 mb-5 mb-lg-4 float-right clearfix">
-                                <h4>Personal Details</h4>
+                                <h4>Detalles Personales</h4>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <ul class="custom-list-style-1 p-0 mb-0">
