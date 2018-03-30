@@ -24,6 +24,7 @@ class HomeController extends Controller
     	$experiencia = $this->curriculum->getRequest($this->iduser,'experiencia');
     	$educacion = $this->curriculum->getRequest($this->iduser,'educacion');
     	$habilidades = $this->curriculum->getRequest($this->iduser,'habilidades');
+    	$idiomas = $this->curriculum->getRequest($this->iduser,'idiomas');
     	$llave = '';
     	foreach ($experiencia as $key => $value) {
     		if ($value->destacar == 1) {
@@ -32,6 +33,6 @@ class HomeController extends Controller
     	}
     	$exp_des = $experiencia[$llave];
 
-    	return view('index',compact('datos','configuracion','experiencia','exp_des','educacion','habilidades'));
+    	return view('index',compact('datos','configuracion','experiencia','exp_des','educacion','habilidades','idiomas'));
     }
 }

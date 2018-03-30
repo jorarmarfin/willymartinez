@@ -342,54 +342,46 @@
                     <div class="row align-items-center">
                         <div class="col-md-6 col-lg-8 mb-4 mb-md-0">
                             <div class="row">
-                                @foreach ($habilidades as $item)
                                 <div class="col-lg-6">
-                                    @if ($loop->index==0)
-                                        <h2 class="text-color-quaternary text-uppercase font-weight-extra-bold">Habilidades & Idiomas</h2>
-                                    @endif
-                                    @if ($loop->iteration==$loop->count)
+                                    <h2 class="text-color-quaternary text-uppercase font-weight-extra-bold">Habilidades & Idiomas</h2>
+                                    @for ($i = 0; $i < mitad(count($habilidades)); $i++)
                                     <div class="progress-bars custom-progress-bars">
-                                    @endif
                                         <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-                                            <span>{{ $item->habilidad }}</span>
+                                            <span>{{ $habilidades[$i]->habilidad }}</span>
                                         </div>
 
                                         <div class="progress mb-2">
-                                            <div class="progress-bar" data-appear-progress-animation="{{ $item->cantidad }}%"></div>
+                                            <div class="progress-bar" data-appear-progress-animation="{{ $habilidades[$i]->cantidad }}%"></div>
                                         </div>
                                     </div>
+                                    @endfor
                                 </div>
                                 <div class="col-lg-6">
+                                    @for ($i = mitad(count($habilidades)); $i < count($habilidades); $i++)
                                     <div class="progress-bars custom-progress-bars custom-md-margin-top-1">
                                         <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-                                            <span>Javascript</span>
+                                            <span>{{ $habilidades[$i]->habilidad }}</span>
                                         </div>
                                         <div class="progress mb-2">
-                                            <div class="progress-bar" data-appear-progress-animation="60%"></div>
+                                            <div class="progress-bar" data-appear-progress-animation="{{ $habilidades[$i]->cantidad }}%"></div>
                                         </div>
                                     </div>
+                                    @endfor
                                 </div>
-                                @endforeach
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
                             <div class="row">
                                 <div class="col">
                                     <div class="custom-box-details background-color-light custom-box-shadow-1">
-                                        <h4 class="text-color-dark">Languages</h4>
+                                        <h4 class="text-color-dark">Idiomas</h4>
                                         <ul class="custom-list-style-1 p-0">
+                                            @foreach ($idiomas as $item)
                                             <li>
-                                                <span class="font-weight-semibold custom-max-width-1 text-color-dark"><img src="img/blank.gif" class="flag flag-us mr-1" alt="English">English:</span>
-                                                <span class="custom-text-color-2">Advanced</span>
+                                                <span class="font-weight-semibold custom-max-width-1 text-color-dark"><img src="img/blank.gif" class="flag flag-{{ flags($item->idioma) }} mr-1" alt="English">{{ $item->idioma }}:</span>
+                                                <span class="custom-text-color-2">{{ $item->nivel }}</span>
                                             </li>
-                                            <li>
-                                                <span class="font-weight-semibold custom-max-width-1 text-color-dark"><img src="img/blank.gif" class="flag flag-es mr-1" alt="Spanish">Spanish:</span>
-                                                <span class="custom-text-color-2">Advanced</span>
-                                            </li>
-                                            <li>
-                                                <span class="font-weight-semibold custom-max-width-1 text-color-dark"><img src="img/blank.gif" class="flag flag-fr mr-1" alt="Française">French:</span>
-                                                <span class="custom-text-color-2">Basic</span>
-                                            </li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                 </div>

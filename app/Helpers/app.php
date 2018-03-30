@@ -63,3 +63,34 @@ if (! function_exists('getDateText')) {
         return $result;
     }
 }
+
+if (! function_exists('mitad')) {
+    /**
+     * Calculo de la mitad de un numero
+     * @return [type] [description]
+     */
+    function mitad($number)
+    {
+    	$retVal = ($number%2==0) ? $number/2 : ($number+1)/2 ;
+        return $retVal;
+    }
+}
+if (! function_exists('flags')) {
+    /**
+     * Muestra La bandera seleccionada
+     * @return [type] [description]
+     */
+    function flags($idioma)
+    {
+    	$flag = '';
+    	if (str_contains($idioma,['Ingles','ingles','English','english'])) {
+    		$flag = 'us';
+    	}elseif (str_contains($idioma,['Frances','frances','French','french'])) {
+    		$flag = 'fr';
+    	}else {
+    		$flag = 'es';
+    	}
+
+        return $flag;
+    }
+}
