@@ -9,7 +9,7 @@ if (! function_exists('getDateText')) {
      * Funcion que retorna el prefijo para nombres de archivos
      * @return [type] [description]
      */
-    function getDateText($fecha)
+    function getDateText($fecha,$format=null)
     {
     	$date = Carbon::createFromFormat('Y-m-d',$fecha);
     	switch ($date->month) {
@@ -50,6 +50,16 @@ if (! function_exists('getDateText')) {
     			$mes = 'Diciembre';
     			break;
     	}
-        return $mes.' '.$date->year;
+    	$result = '';
+    	switch ($format) {
+    		case 'year':
+    			$result = $date->year;
+    			break;
+
+    		default:
+    			$result = $mes.' '.$date->year;
+    			break;
+    	}
+        return $result;
     }
 }

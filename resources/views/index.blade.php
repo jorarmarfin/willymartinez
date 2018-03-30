@@ -313,62 +313,24 @@
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <h2 class="text-color-quaternary text-uppercase font-weight-extra-bold m-0">Education</h2>
+                            <h2 class="text-color-quaternary text-uppercase font-weight-extra-bold m-0">Formación académica</h2>
                             <div class="owl-carousel nav-bottom custom-dots-style-1 mb-0" data-plugin-options="{'items': 1, 'loop': false, 'dots': true, 'nav': false}">
-                                <div class="row">
-                                    <div class="col-lg-6 col-sm-6 pb-4">
-                                        <div class="custom-box-details-2 background-color-light custom-box-shadow-3">
-                                            <i class="icon-graduation icons text-color-primary"></i>
-                                            <h4 class="font-weight-semibold text-color-dark m-0">Porto University</h4>
-                                            <p class="custom-text-color-2 mb-1">Master of Information Technology</p>
-                                            <strong class="text-color-primary">2001-2017</strong>
+                                @foreach ($educacion as $item)
+                                    @if ($loop->iteration%2!=0)
+                                    <div class="row ">
+                                    @endif
+                                        <div class="col-lg-6 col-sm-6 pb-4">
+                                            <div class="custom-box-details-2 background-color-light custom-box-shadow-3">
+                                                <i class="icon-graduation icons text-color-primary"></i>
+                                                <h4 class="font-weight-semibold text-color-dark m-0">{{ $item->institucion }}</h4>
+                                                <p class="custom-text-color-2 mb-1">{{ $item->carrera}}</p>
+                                                <strong class="text-color-primary">{{ getDateText($item->fecha_inicio,'year').' - '.getDateText($item->fecha_fin,'year') }}</strong>
+                                            </div>
                                         </div>
+                                    @if ($loop->iteration%2==0 || $loop->count==1)
                                     </div>
-                                    <div class="col-lg-6 col-sm-6 pb-4">
-                                        <div class="custom-box-details-2 background-color-light custom-box-shadow-3">
-                                            <i class="icon-graduation icons text-color-primary"></i>
-                                            <h4 class="font-weight-semibold text-color-dark m-0">Porto University</h4>
-                                            <p class="custom-text-color-2 mb-1">Master of Information Technology</p>
-                                            <strong class="text-color-primary">2001-2017</strong>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6 col-sm-6 pb-4">
-                                        <div class="custom-box-details-2 background-color-light custom-box-shadow-3">
-                                            <i class="icon-graduation icons text-color-primary"></i>
-                                            <h4 class="font-weight-semibold text-color-dark m-0">Porto University</h4>
-                                            <p class="custom-text-color-2 mb-1">Master of Information Technology</p>
-                                            <strong class="text-color-primary">2001-2017</strong>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-sm-6 pb-4">
-                                        <div class="custom-box-details-2 background-color-light custom-box-shadow-3">
-                                            <i class="icon-graduation icons text-color-primary"></i>
-                                            <h4 class="font-weight-semibold text-color-dark m-0">Porto University</h4>
-                                            <p class="custom-text-color-2 mb-1">Master of Information Technology</p>
-                                            <strong class="text-color-primary">2001-2017</strong>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6 col-sm-6 pb-4">
-                                        <div class="custom-box-details-2 background-color-light custom-box-shadow-3">
-                                            <i class="icon-graduation icons text-color-primary"></i>
-                                            <h4 class="font-weight-semibold text-color-dark m-0">Porto University</h4>
-                                            <p class="custom-text-color-2 mb-1">Master of Information Technology</p>
-                                            <strong class="text-color-primary">2001-2017</strong>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-sm-6 pb-4">
-                                        <div class="custom-box-details-2 background-color-light custom-box-shadow-3">
-                                            <i class="icon-graduation icons text-color-primary"></i>
-                                            <h4 class="font-weight-semibold text-color-dark m-0">Porto University</h4>
-                                            <p class="custom-text-color-2 mb-1">Master of Information Technology</p>
-                                            <strong class="text-color-primary">2001-2017</strong>
-                                        </div>
-                                    </div>
-                                </div>
+                                    @endif
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -380,33 +342,20 @@
                     <div class="row align-items-center">
                         <div class="col-md-6 col-lg-8 mb-4 mb-md-0">
                             <div class="row">
+                                @foreach ($habilidades as $item)
                                 <div class="col-lg-6">
-                                    <h2 class="text-color-quaternary text-uppercase font-weight-extra-bold">Skills & Language</h2>
+                                    @if ($loop->index==0)
+                                        <h2 class="text-color-quaternary text-uppercase font-weight-extra-bold">Habilidades & Idiomas</h2>
+                                    @endif
+                                    @if ($loop->iteration==$loop->count)
                                     <div class="progress-bars custom-progress-bars">
+                                    @endif
                                         <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-                                            <span>Start Up</span>
+                                            <span>{{ $item->habilidad }}</span>
                                         </div>
 
                                         <div class="progress mb-2">
-                                            <div class="progress-bar" data-appear-progress-animation="60%"></div>
-                                        </div>
-                                        <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-                                            <span>Innovation</span>
-                                        </div>
-                                        <div class="progress mb-2">
-                                            <div class="progress-bar" data-appear-progress-animation="80%" data-appear-animation-delay="300"></div>
-                                        </div>
-                                        <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-                                            <span>Products</span>
-                                        </div>
-                                        <div class="progress mb-2">
-                                            <div class="progress-bar" data-appear-progress-animation="70%" data-appear-animation-delay="600"></div>
-                                        </div>
-                                        <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-                                            <span>CSS</span>
-                                        </div>
-                                        <div class="progress mb-2">
-                                            <div class="progress-bar" data-appear-progress-animation="90%" data-appear-animation-delay="900"></div>
+                                            <div class="progress-bar" data-appear-progress-animation="{{ $item->cantidad }}%"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -418,26 +367,9 @@
                                         <div class="progress mb-2">
                                             <div class="progress-bar" data-appear-progress-animation="60%"></div>
                                         </div>
-                                        <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-                                            <span>Business</span>
-                                        </div>
-                                        <div class="progress mb-2">
-                                            <div class="progress-bar" data-appear-progress-animation="80%" data-appear-animation-delay="300"></div>
-                                        </div>
-                                        <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-                                            <span>E-commerce</span>
-                                        </div>
-                                        <div class="progress mb-2">
-                                            <div class="progress-bar" data-appear-progress-animation="70%" data-appear-animation-delay="600"></div>
-                                        </div>
-                                        <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-                                            <span>Creative</span>
-                                        </div>
-                                        <div class="progress mb-2">
-                                            <div class="progress-bar" data-appear-progress-animation="90%" data-appear-animation-delay="900"></div>
-                                        </div>
                                     </div>
                                 </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
