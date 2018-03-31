@@ -654,9 +654,9 @@
                             <div class="row justify-content-end m-0">
                                 <div class="col-half-section col-half-section-right mr-3">
                                     <h2 class="text-color-quaternary text-uppercase font-weight-extra-bold">Contactame</h2>
-                                    <form id="callSendMessage" class="custom-form-style" action="php/contact-form.php" method="POST">
+                                    {!! Form::open(['route'=>'contactame','method'=>'POST','class'=>'custom-form-style']) !!}
                                         <div class="alert alert-success d-none mt-4" id="contactSuccess">
-                                            <strong>Success!</strong> Your message has been sent to us.
+                                            <strong>Enviado!</strong> Su mensaje ha sido enviado.
                                         </div>
 
                                         <div class="alert alert-danger d-none mt-4" id="contactError">
@@ -665,17 +665,17 @@
                                         </div>
                                         <div class="form-content">
                                             <div class="form-control-custom">
-                                                <input type="text" class="form-control" name="callName" placeholder="Tu nombre *" data-msg-required="This field is required." id="callName" required="" />
+                                                <input type="text" class="form-control" name="nombre" placeholder="Tu nombre *" data-msg-required="This field is required." id="callName" required="" />
                                             </div>
                                             <div class="form-control-custom">
-                                                <input type="text" class="form-control" name="callSubject" placeholder="Asunto *" data-msg-required="This field is required." id="callSubject" required="" />
+                                                <input type="text" class="form-control" name="asunto" placeholder="Asunto *" data-msg-required="This field is required." id="callSubject" required="" />
                                             </div>
                                             <div class="form-control-custom">
-                                                <textarea maxlength="5000" data-msg-required="por favor ingresa tu mensaje." rows="10" class="form-control" name="Mensaje" placeholder="Mensaje*" id="message" required="" aria-required="true"></textarea>
+                                                <textarea maxlength="5000" data-msg-required="por favor ingresa tu mensaje." rows="10" class="form-control" name="mensaje" placeholder="Mensaje*" id="message" required="" aria-required="true"></textarea>
                                             </div>
                                             <input type="submit" class="btn btn-quaternary text-color-light text-uppercase font-weight-semibold outline-none custom-btn-style-2 custom-border-radius-1" value="Enviar" />
                                         </div>
-                                    </form>
+                                    {!! Form::close() !!}
                                 </div>
                             </div>
                         </section>

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactEmail;
 use App\Repositories\Curriculum;
-
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -34,5 +35,13 @@ class HomeController extends Controller
     	$exp_des = $experiencia[$llave];
 
     	return view('index',compact('datos','configuracion','experiencia','exp_des','educacion','habilidades','idiomas'));
+    }
+    public function sendemail(Request $request)
+    {
+    	/*Envio de Email*/
+        $datos = $request->all();
+        Mail::to('luis.mayta@gmail.com','Luis Mayta')
+                ->send(new ContactEmail($datos));
+        return redirect()->route('home.index');
     }
 }
