@@ -268,7 +268,7 @@
                     </div>
                 </div>
             </section>
-
+            @if ((bool)$configuracion->experiencia)
             <section id="experience" class="section section-secondary section-no-border m-0">
                 <div class="container">
                     <div class="row">
@@ -308,7 +308,8 @@
                     </div>
                 </div>
             </section>
-
+            @endif
+            @if ((bool)$configuracion->formacion)
             <section id="education" class="section section-no-border custom-background-color-1 m-0">
                 <div class="container">
                     <div class="row">
@@ -336,7 +337,8 @@
                     </div>
                 </div>
             </section>
-
+            @endif
+            @if ((bool)$configuracion->habilidades)
             <section id="skills" class="section section-no-border background-color-light m-0">
                 <div class="container">
                     <div class="row align-items-center">
@@ -370,6 +372,7 @@
                                 </div>
                             </div>
                         </div>
+                        @if ((bool)$configuracion->idiomas)
                         <div class="col-md-6 col-lg-4">
                             <div class="row">
                                 <div class="col">
@@ -387,15 +390,18 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
                     </div>
                 </div>
             </section>
-
+            @endif
+            @if ((bool)$configuracion->portafolio)
             <section id="portfolio" class="section section-no-border background-color-secondary m-0">
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <h2 class="text-color-quaternary font-weight-extra-bold text-uppercase">Portfolio</h2>
+                            <h2 class="text-color-quaternary font-weight-extra-bold text-uppercase">Portafolio</h2>
+
                             <ul class="nav nav-pills sort-source custom-nav-sort mb-4" data-sort-id="portfolio" data-option-key="filter">
                                 <li class="nav-item active" data-option-value="*"><a class="nav-link text-dark active" href="#">Show All</a></li>
                                 <li class="nav-item" data-option-value=".websites"><a class="nav-link text-dark" href="#">Websites</a></li>
@@ -506,7 +512,8 @@
                     </div>
                 </div>
             </section>
-
+            @endif
+            @if ((bool)$configuracion->recomendaciones)
             <section id="recommendations" class="section section-no-border background-color-primary m-0">
                 <div class="container">
                     <div class="row">
@@ -544,7 +551,8 @@
                     </div>
                 </div>
             </section>
-
+            @endif
+            @if ((bool)$configuracion->blog)
             <section id="blog" class="section section-no-border background-color-light m-0">
                 <div class="container">
                     <div class="row">
@@ -638,14 +646,14 @@
                     </div>
                 </div>
             </section>
-
+            @endif
             <div id="say-hello" class="container-fluid">
                 <div class="row">
                     <div class="col-lg-6 p-0">
                         <section class="section section-no-border background-color-primary h-100 m-0">
                             <div class="row justify-content-end m-0">
                                 <div class="col-half-section col-half-section-right mr-3">
-                                    <h2 class="text-color-quaternary text-uppercase font-weight-extra-bold">Say Hello</h2>
+                                    <h2 class="text-color-quaternary text-uppercase font-weight-extra-bold">Contactame</h2>
                                     <form id="callSendMessage" class="custom-form-style" action="php/contact-form.php" method="POST">
                                         <div class="alert alert-success d-none mt-4" id="contactSuccess">
                                             <strong>Success!</strong> Your message has been sent to us.
@@ -657,15 +665,15 @@
                                         </div>
                                         <div class="form-content">
                                             <div class="form-control-custom">
-                                                <input type="text" class="form-control" name="callName" placeholder="Your Name *" data-msg-required="This field is required." id="callName" required="" />
+                                                <input type="text" class="form-control" name="callName" placeholder="Tu nombre *" data-msg-required="This field is required." id="callName" required="" />
                                             </div>
                                             <div class="form-control-custom">
-                                                <input type="text" class="form-control" name="callSubject" placeholder="Subject *" data-msg-required="This field is required." id="callSubject" required="" />
+                                                <input type="text" class="form-control" name="callSubject" placeholder="Asunto *" data-msg-required="This field is required." id="callSubject" required="" />
                                             </div>
                                             <div class="form-control-custom">
-                                                <textarea maxlength="5000" data-msg-required="Please enter your message." rows="10" class="form-control" name="message" placeholder="Message*" id="message" required="" aria-required="true"></textarea>
+                                                <textarea maxlength="5000" data-msg-required="por favor ingresa tu mensaje." rows="10" class="form-control" name="Mensaje" placeholder="Mensaje*" id="message" required="" aria-required="true"></textarea>
                                             </div>
-                                            <input type="submit" class="btn btn-quaternary text-color-light text-uppercase font-weight-semibold outline-none custom-btn-style-2 custom-border-radius-1" value="Submit" />
+                                            <input type="submit" class="btn btn-quaternary text-color-light text-uppercase font-weight-semibold outline-none custom-btn-style-2 custom-border-radius-1" value="Enviar" />
                                         </div>
                                     </form>
                                 </div>
