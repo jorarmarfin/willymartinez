@@ -681,39 +681,28 @@
                         </section>
                     </div>
                     <div class="col-lg-6 p-0">
-                        <section class="section section-no-border h-100 m-0" style="background: url(img/demos/resume/contact/contact-bg-1.jpg); background-size: cover;">
+                        <section class="section section-no-border h-100 m-0" style="background: url({{ $configuracion->fondo }}); background-size: cover;">
                             <div class="row m-0">
                                 <div class="col-half-section col-half-section-left ml-3">
-                                    <a href="mailto:you@domain.com" class="text-decoration-none">
+                                    <a href="mailto:{{ $datos->email }}" class="text-decoration-none">
                                         <span class="feature-box custom-feature-box align-items-center mb-4">
                                             <span class="custom-feature-box-icon">
                                                 <i class="icon-envelope icons text-color-light"></i>
                                             </span>
                                             <span class="feature-box-info">
                                                 <span class="custom-label font-weight-semibold text-uppercase custom-text-color-1">Email</span>
-                                                <strong class="font-weight-light text-color-light custom-opacity-effect-1">you@domain.com</strong>
+                                                <strong class="font-weight-light text-color-light custom-opacity-effect-1">{{ $datos->email }}</strong>
                                             </span>
                                         </span>
                                     </a>
-                                    <a href="tel:+1234657890" class="text-decoration-none">
+                                    <a href="tel:{{ $datos->telefono }}" class="text-decoration-none">
                                         <span class="feature-box custom-feature-box align-items-center mb-4">
                                             <span class="custom-feature-box-icon">
                                                 <i class="icon-phone icons text-color-light"></i>
                                             </span>
                                             <span class="feature-box-info">
-                                                <span class="custom-label font-weight-semibold text-uppercase custom-text-color-1">Phone</span>
-                                                <strong class="font-weight-light text-color-light custom-opacity-effect-1">123-456-7890</strong>
-                                            </span>
-                                        </span>
-                                    </a>
-                                    <a href="skype:yourskype?chat" class="text-decoration-none">
-                                        <span class="feature-box custom-feature-box align-items-center mb-4">
-                                            <span class="custom-feature-box-icon">
-                                                <i class="icon-social-skype icons text-color-light"></i>
-                                            </span>
-                                            <span class="feature-box-info">
-                                                <span class="custom-label font-weight-semibold text-uppercase custom-text-color-1">Skype</span>
-                                                <strong class="font-weight-light text-color-light custom-opacity-effect-1">yourskype</strong>
+                                                <span class="custom-label font-weight-semibold text-uppercase custom-text-color-1">Telefono</span>
+                                                <strong class="font-weight-light text-color-light custom-opacity-effect-1">{{ $datos->telefono }}</strong>
                                             </span>
                                         </span>
                                     </a>
