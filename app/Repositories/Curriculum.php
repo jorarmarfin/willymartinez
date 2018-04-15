@@ -17,18 +17,14 @@ class Curriculum
 		]);
 	}
 
-	public function getMyData($id)
+	public function getRequest($id,$name,$isarray=false,$type='GET')
 	{
-		return $this->getRequest('/api/'.$id.'/mydata')[0];
-	}
-	public function getMyConfiguration($id)
-	{
-		return $this->getRequest('/api/'.$id.'/configuracion')[0];
-	}
+		$url = '/api/'.$id.'/'.$name;
+		$response = $this->client->request($type,$url);
 
-	public function getRequest($uri,$type='GET')
-	{
-		$response = $this->client->request($type,$uri);
-		return json_decode($response->getBody()->getContents());
+		$data = json_decode($response->getBody()->getContents());
+
+		if($isarray)return $data[0];
+		else return $data;
 	}
 }
