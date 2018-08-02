@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>Demo Resume | Porto - Responsive HTML5 Template 6.0.0</title>
+        <title>Demo Resume | Porto - Responsive HTML5 Template 6.2.1</title>
 
         <meta name="keywords" content="HTML5 Template" />
         <meta name="description" content="Porto - Responsive HTML5 Template">
@@ -17,14 +17,14 @@
         <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
         <!-- Mobile Metas -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
 
         <!-- Web Fonts  -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
 
         <!-- Vendor CSS -->
         <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="vendor/font-awesome/css/fontawesome-all.min.css">
         <link rel="stylesheet" href="vendor/animate/animate.min.css">
         <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.min.css">
         <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.min.css">
@@ -71,37 +71,37 @@
                                                     <li>
                                                         <a data-hash href="#about-me" class="nav-link text-color-dark background-color-primary">
                                                             <i class="icon-home icons"></i>
-                                                            <span class="custom-tooltip">Sobre Mi</span>
+                                                            <span class="custom-tooltip">About Me</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a data-hash href="#experience" class="nav-link text-color-dark background-color-primary">
                                                             <i class="icon-eye icons"></i>
-                                                            <span class="custom-tooltip">Experiencia</span>
+                                                            <span class="custom-tooltip">Experience</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a data-hash href="#education" class="nav-link text-color-dark background-color-primary">
                                                             <i class="icon-briefcase icons"></i>
-                                                            <span class="custom-tooltip">Educación</span>
+                                                            <span class="custom-tooltip">Education</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a data-hash href="#skills" class="nav-link text-color-dark background-color-primary">
                                                             <i class="icon-graduation icons"></i>
-                                                            <span class="custom-tooltip">Habilidades e idiomas</span>
+                                                            <span class="custom-tooltip">Skills</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a data-hash href="#portfolio" class="nav-link text-color-dark background-color-primary">
                                                             <i class="icon-diamond icons"></i>
-                                                            <span class="custom-tooltip">Portafolio</span>
+                                                            <span class="custom-tooltip">Portfolio</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a data-hash href="#recommendations" class="nav-link text-color-dark background-color-primary">
                                                             <i class="icon-pencil icons"></i>
-                                                            <span class="custom-tooltip">Recomendaciones</span>
+                                                            <span class="custom-tooltip">Recommendations</span>
                                                         </a>
                                                     </li>
                                                     <li>
@@ -113,14 +113,14 @@
                                                     <li>
                                                         <a data-hash href="#say-hello" class="nav-link text-color-dark background-color-primary">
                                                             <i class="icon-envelope-open icons"></i>
-                                                            <span class="custom-tooltip">Contactame</span>
+                                                            <span class="custom-tooltip">Say Hello</span>
                                                         </a>
                                                     </li>
                                                 </ul>
                                             </nav>
                                         </div>
                                         <button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main nav">
-                                            <i class="fa fa-bars"></i>
+                                            <i class="fas fa-bars"></i>
                                         </button>
                                     </div>
                                 </div>
@@ -132,18 +132,18 @@
 
             <div role="main" class="main">
 
-            <section id="about-me" class="section section-no-border section-parallax custom-section-padding-1 custom-position-1 custom-xs-bg-size-cover parallax-no-overflow m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5}" data-image-src="{{ $configuracion->fondo }}">
+            <section id="about-me" class="section section-no-border section-parallax custom-section-padding-1 custom-position-1 custom-xs-bg-size-cover parallax-no-overflow m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5}" data-image-src="img/demos/resume/about-me/about-me-bg-1.jpg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-4 custom-sm-margin-bottom-1">
-                            <img src="{{ $datos->foto }}" class="img-fluid custom-border custom-image-position-2 custom-box-shadow-4" alt />
+                            <img src="img/demos/resume/about-me/me.jpg" class="img-fluid custom-border custom-image-position-2 custom-box-shadow-4" alt />
                         </div>
                         <div class="col-lg-6 col-xl-5">
-                            <h1 class="text-color-primary custom-font-size-1">{{ $datos->nombre_corto }}</h1>
-                            <p class="text-color-light font-weight-normal custom-font-size-2 custom-margin-bottom-1">{{ $exp_des->cargo }}</p>
+                            <h1 class="text-color-primary custom-font-size-1">Adam Doe</h1>
+                            <p class="text-color-light font-weight-normal custom-font-size-2 custom-margin-bottom-1">Chief Product Officer at Okler Themes</p>
                             <span class="custom-about-me-infos">
-                                <span class="custom-text-color-1 text-uppercase">{{ $exp_des->institucion }}</span>
-                                <span class="custom-text-color-1 text-uppercase mb-3">{{ $exp_des->rubro }}</span>
+                                <span class="custom-text-color-1 text-uppercase">Greater New York area</span>
+                                <span class="custom-text-color-1 text-uppercase mb-3">Information Technology &amp; Services</span>
                                 <span class="custom-text-color-1 text-uppercase">
                                     <strong class="text-color-light">Previous: </strong>
                                     Front-End Developer at Porto
@@ -157,24 +157,24 @@
                             </span>
                         </div>
                         <div class="col-lg-2 col-xl-3 d-none d-lg-block">
-                            <img src="{{ $configuracion->imagen_secundaria }}" custom-anim class="img-fluid custom-image-pos-1" alt />
+                            <img src="img/demos/resume/about-me/mouse.png" custom-anim class="img-fluid custom-image-pos-1" alt />
                         </div>
                     </div>
                 </div>
                 <ul class="social-icons custom-social-icons">
                     <li class="social-icons-facebook">
                         <a href="http://www.facebook.com/" target="_blank" title="Facebook">
-                            <i class="fa fa-facebook"></i>
+                            <i class="fab fa-facebook-f"></i>
                         </a>
                     </li>
                     <li class="social-icons-twitter">
                         <a href="http://www.twitter.com/" target="_blank" title="Twitter">
-                            <i class="fa fa-twitter"></i>
+                            <i class="fab fa-twitter"></i>
                         </a>
                     </li>
                     <li class="social-icons-youtube">
                         <a href="http://www.youtube.com/" target="_blank" title="Youtube">
-                            <i class="fa fa-youtube"></i>
+                            <i class="fab fa-youtube"></i>
                         </a>
                     </li>
                 </ul>
@@ -187,7 +187,7 @@
                             <a data-hash href="#say-hello" class="text-decoration-none">
                                 <span class="custom-nav-button text-color-dark">
                                     <i class="icon-earphones-alt icons text-color-primary"></i>
-                                    Información de Contacto
+                                    Contact Information
                                 </span>
                             </a>
                         </div>
@@ -195,7 +195,7 @@
                             <a data-hash href="#say-hello" class="text-decoration-none">
                                 <span class="custom-nav-button custom-divisors text-color-dark">
                                     <i class="icon-envelope-open icons text-color-primary"></i>
-                                    Enviar Mensaje
+                                    Send Message
                                 </span>
                             </a>
                         </div>
@@ -203,7 +203,7 @@
                             <a href="#" class="text-decoration-none">
                                 <span class="custom-nav-button text-color-dark">
                                     <i class="icon-cloud-download icons text-color-primary"></i>
-                                    Descargar CV
+                                    Download Resume
                                 </span>
                             </a>
                         </div>
@@ -217,21 +217,21 @@
                         <div class="col">
 
                             <div class="custom-box-details background-color-light custom-box-shadow-1 col-lg-6 ml-5 mb-5 mb-lg-4 float-right clearfix">
-                                <h4>Detalles Personales</h4>
+                                <h4>Personal Details</h4>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <ul class="custom-list-style-1 p-0 mb-0">
                                             <li>
-                                                <span class="text-color-dark">Fecha Nacimiento:</span>
-                                                <span class="custom-text-color-2">{{ $datos->fecha_nacimiento }}</span>
+                                                <span class="text-color-dark">Birthday:</span>
+                                                <span class="custom-text-color-2">1990 October 2</span>
                                             </li>
                                             <li>
-                                                <span class="text-color-dark">Estado Civil:</span>
-                                                <span class="custom-text-color-2">{{ $datos->estado_civil }}</span>
+                                                <span class="text-color-dark">Marital:</span>
+                                                <span class="custom-text-color-2">Single</span>
                                             </li>
                                             <li>
-                                                <span class="text-color-dark">Nacionalidad:</span>
-                                                <span class="custom-text-color-2">{{ $datos->nacionalidad }}</span>
+                                                <span class="text-color-dark">Nationality:</span>
+                                                <span class="custom-text-color-2">American</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -242,65 +242,113 @@
                                                 <span class="custom-text-color-2"><a class="custom-text-color-2" href="skype:yourskype?chat">yourskype</a></span>
                                             </li>
                                             <li>
-                                                <span class="text-color-dark">Telefono:</span>
-                                                <span class="custom-text-color-2"><a class="custom-text-color-2" href="tel:123456789">{{ $datos->telefono }}</a></span>
+                                                <span class="text-color-dark">PHONE:</span>
+                                                <span class="custom-text-color-2"><a class="custom-text-color-2" href="tel:123456789">123-456-789</a></span>
                                             </li>
                                             <li>
                                                 <span class="text-color-dark">EMAIL:</span>
-                                                <span class="custom-text-color-2"><a class="custom-text-color-2" href="mailto:{{ $datos->email }}" style="font-size: 11px; text-decoration:  unset; text-transform:  lowercase;">{{ $datos->email }}</a></span>
+                                                <span class="custom-text-color-2"><a class="custom-text-color-2" href="mailto:me@domain.com">me@domain.com</a></span>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
 
-                            <h2 class="text-color-quaternary font-weight-extra-bold text-uppercase">Sobre Mi</h2>
+                            <h2 class="text-color-quaternary font-weight-extra-bold text-uppercase">About Me</h2>
 
-                            <p class="custom-text-color-2">{!! $datos->resumen !!}</p>
+                            <p class="custom-text-color-2">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
 
                             <div class="about-me-more" id="aboutMeMore">
-                                {!! $datos->sobre_mi !!}
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt nulla tortor, a imperdiet enim tristique nec. Nulla lobortis leo eget metus dapibus sodales. Sed placerat vitae dui vitae vehicula. Quisque in tincidunt ligula, nec dignissim arcu. Praesent aliquam velit vel libero dictum, non sollicitudin lectus mollis. Morbi sollicitudin auctor gravida. Vivamus vitae dui non lorem euismod pretium. Morbi congue sem sed ex iaculis, nec mattis felis pretium. Nullam molestie libero id odio blandit sodales. Suspendisse non mauris et felis molestie placerat aliquet a risus. Aliquam ac leo tempus, hendrerit eros mollis, gravida est.</p>
+
+                                <p>Proin euismod ipsum a tellus condimentum dapibus. Integer porttitor felis elit, eget rutrum ligula commodo quis. Praesent ultricies neque eu mi congue blandit. Nulla feugiat feugiat aliquet. Morbi sed mattis erat. Nullam scelerisque molestie eros, id tristique felis iaculis non. Duis pellentesque neque eget iaculis varius. Donec at nisl semper, aliquam est id, tincidunt lacus. Donec at erat purus.</p>
+
+                                <p>Morbi tincidunt nunc non diam porta, at fermentum orci bibendum. Donec arcu nisi, ornare nec commodo vitae, sollicitudin sed magna. Cras sit amet justo et nulla pulvinar laoreet. Phasellus scelerisque, metus id posuere vulputate, diam tellus iaculis sapien, eget scelerisque ipsum libero convallis velit. Duis lorem ligula, faucibus quis tellus nec, fringilla ultricies leo. Etiam tempus congue magna. Suspendisse porta dictum tortor, eu volutpat ipsum eleifend nec. Aliquam dapibus lorem luctus, cursus libero imperdiet, mattis nunc. Sed in ipsum diam. Quisque efficitur metus purus, vitae fermentum lacus venenatis id.</p>
                             </div>
 
-                            <a id="aboutMeMoreBtn" class="btn btn-tertiary text-uppercase custom-btn-style-1 text-1" href="#">Ver Más</a>
+                            <a id="aboutMeMoreBtn" class="btn btn-tertiary text-uppercase custom-btn-style-1 text-1" href="#">View More</a>
 
                         </div>
                     </div>
                 </div>
             </section>
-            @if ((bool)$configuracion->experiencia)
+
             <section id="experience" class="section section-secondary section-no-border m-0">
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <h2 class="text-color-quaternary text-uppercase font-weight-extra-bold">Experiencia</h2>
+                            <h2 class="text-color-quaternary text-uppercase font-weight-extra-bold">Experience</h2>
                             <section class="timeline custom-timeline" id="timeline">
                                 <div class="timeline-body">
-                                    @foreach ($experiencia as $item)
-                                        <article class="timeline-box right custom-box-shadow-2">
-                                            <div class="row">
-                                                <div class="experience-info col-lg-3 col-sm-5 background-color-primary">
-                                                    <span class="from text-color-dark text-uppercase">
-                                                        Desde
-                                                        <span class="font-weight-semibold">{{ getDateText($item->fecha_inicio) }}</span>
-                                                    </span>
-                                                    <span class="to text-color-dark text-uppercase">
-                                                        Hasta
-                                                        <span class="font-weight-semibold">{{ getDateText($item->fecha_fin) }}</span>
-                                                    </span>
-                                                    <p class="text-color-dark">(3 Years 9 Months)</p>
-                                                    <span class="company text-color-dark font-weight-semibold">
-                                                        {{ $item->institucion }}
-                                                        <span class="company-location text-color-dark font-weight-normal text-uppercase">{{ $item->rubro }}</span>
-                                                    </span>
-                                                </div>
-                                                <div class="experience-description col-lg-9 col-sm-7 background-color-light">
-                                                    <h4 class="text-color-dark font-weight-semibold">{{ $item->cargo }}</h4>
-                                                    {!! $item->body !!}
-                                                </div>
+                                    <article class="timeline-box right custom-box-shadow-2">
+                                        <div class="row">
+                                            <div class="experience-info col-lg-3 col-sm-5 background-color-primary">
+                                                <span class="from text-color-dark text-uppercase">
+                                                    From
+                                                    <span class="font-weight-semibold">Sep 2012</span>
+                                                </span>
+                                                <span class="to text-color-dark text-uppercase">
+                                                    To
+                                                    <span class="font-weight-semibold">Present</span>
+                                                </span>
+                                                <p class="text-color-dark">(3 Years 9 Months)</p>
+                                                <span class="company text-color-dark font-weight-semibold">
+                                                    Okler Themes
+                                                    <span class="company-location text-color-dark font-weight-normal text-uppercase">Greater New York</span>
+                                                </span>
                                             </div>
-                                        </article>
-                                    @endforeach
+                                            <div class="experience-description col-lg-9 col-sm-7 background-color-light">
+                                                <h4 class="text-color-dark font-weight-semibold">Chief Product Officer</h4>
+                                                <p class="custom-text-color-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt nulla tortor, a imperdiet enim tristique nec. Nulla lobortis leo eget metus dapibus sodales. Sed placerat vitae dui vitae vehicula. Quisque in tincidunt ligula, nec dignissim arcu.</p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article class="timeline-box right custom-box-shadow-2">
+                                        <div class="row">
+                                            <div class="experience-info col-lg-3 col-sm-5 background-color-primary">
+                                                <span class="from text-color-dark text-uppercase">
+                                                    From
+                                                    <span class="font-weight-semibold">Sep 2012</span>
+                                                </span>
+                                                <span class="to text-color-dark text-uppercase">
+                                                    To
+                                                    <span class="font-weight-semibold">Present</span>
+                                                </span>
+                                                <p class="text-color-dark">(3 Years 9 Months)</p>
+                                                <span class="company text-color-dark font-weight-semibold">
+                                                    Okler Themes
+                                                    <span class="company-location text-color-dark font-weight-normal text-uppercase">Greater New York</span>
+                                                </span>
+                                            </div>
+                                            <div class="experience-description col-lg-9 col-sm-7 background-color-light">
+                                                <h4 class="text-color-dark font-weight-semibold">Chief Product Officer</h4>
+                                                <p class="custom-text-color-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt nulla tortor, a imperdiet enim tristique nec. Nulla lobortis leo eget metus dapibus sodales. Sed placerat vitae dui vitae vehicula. Quisque in tincidunt ligula, nec dignissim arcu.</p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article class="timeline-box right custom-box-shadow-2">
+                                        <div class="row">
+                                            <div class="experience-info col-lg-3 col-sm-5 background-color-primary">
+                                                <span class="from text-color-dark text-uppercase">
+                                                    From
+                                                    <span class="font-weight-semibold">Sep 2012</span>
+                                                </span>
+                                                <span class="to text-color-dark text-uppercase">
+                                                    To
+                                                    <span class="font-weight-semibold">Present</span>
+                                                </span>
+                                                <p class="text-color-dark">(3 Years 9 Months)</p>
+                                                <span class="company text-color-dark font-weight-semibold">
+                                                    Okler Themes
+                                                    <span class="company-location text-color-dark font-weight-normal text-uppercase">Greater New York</span>
+                                                </span>
+                                            </div>
+                                            <div class="experience-description col-lg-9 col-sm-7 background-color-light">
+                                                <h4 class="text-color-dark font-weight-semibold">Chief Product Officer</h4>
+                                                <p class="custom-text-color-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt nulla tortor, a imperdiet enim tristique nec. Nulla lobortis leo eget metus dapibus sodales. Sed placerat vitae dui vitae vehicula. Quisque in tincidunt ligula, nec dignissim arcu.</p>
+                                            </div>
+                                        </div>
+                                    </article>
                                     <div class="timeline-bar"></div>
                                 </div>
                             </section>
@@ -308,100 +356,170 @@
                     </div>
                 </div>
             </section>
-            @endif
-            @if ((bool)$configuracion->formacion)
+
             <section id="education" class="section section-no-border custom-background-color-1 m-0">
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <h2 class="text-color-quaternary text-uppercase font-weight-extra-bold m-0">Formación académica</h2>
+                            <h2 class="text-color-quaternary text-uppercase font-weight-extra-bold m-0">Education</h2>
                             <div class="owl-carousel nav-bottom custom-dots-style-1 mb-0" data-plugin-options="{'items': 1, 'loop': false, 'dots': true, 'nav': false}">
-                                @foreach ($educacion as $item)
-                                    @if ($loop->iteration%2!=0)
-                                    <div class="row ">
-                                    @endif
-                                        <div class="col-lg-6 col-sm-6 pb-4">
-                                            <div class="custom-box-details-2 background-color-light custom-box-shadow-3">
-                                                <i class="icon-graduation icons text-color-primary"></i>
-                                                <h4 class="font-weight-semibold text-color-dark m-0">{{ $item->institucion }}</h4>
-                                                <p class="custom-text-color-2 mb-1">{{ $item->carrera}}</p>
-                                                <strong class="text-color-primary">{{ getDateText($item->fecha_inicio,'year').' - '.getDateText($item->fecha_fin,'year') }}</strong>
-                                            </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-sm-6 pb-4">
+                                        <div class="custom-box-details-2 background-color-light custom-box-shadow-3">
+                                            <i class="icon-graduation icons text-color-primary"></i>
+                                            <h4 class="font-weight-semibold text-color-dark m-0">Porto University</h4>
+                                            <p class="custom-text-color-2 mb-1">Master of Information Technology</p>
+                                            <strong class="text-color-primary">2001-2017</strong>
                                         </div>
-                                    @if ($loop->iteration%2==0 || $loop->count==1)
                                     </div>
-                                    @endif
-                                @endforeach
+                                    <div class="col-lg-6 col-sm-6 pb-4">
+                                        <div class="custom-box-details-2 background-color-light custom-box-shadow-3">
+                                            <i class="icon-graduation icons text-color-primary"></i>
+                                            <h4 class="font-weight-semibold text-color-dark m-0">Porto University</h4>
+                                            <p class="custom-text-color-2 mb-1">Master of Information Technology</p>
+                                            <strong class="text-color-primary">2001-2017</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-sm-6 pb-4">
+                                        <div class="custom-box-details-2 background-color-light custom-box-shadow-3">
+                                            <i class="icon-graduation icons text-color-primary"></i>
+                                            <h4 class="font-weight-semibold text-color-dark m-0">Porto University</h4>
+                                            <p class="custom-text-color-2 mb-1">Master of Information Technology</p>
+                                            <strong class="text-color-primary">2001-2017</strong>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-sm-6 pb-4">
+                                        <div class="custom-box-details-2 background-color-light custom-box-shadow-3">
+                                            <i class="icon-graduation icons text-color-primary"></i>
+                                            <h4 class="font-weight-semibold text-color-dark m-0">Porto University</h4>
+                                            <p class="custom-text-color-2 mb-1">Master of Information Technology</p>
+                                            <strong class="text-color-primary">2001-2017</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-sm-6 pb-4">
+                                        <div class="custom-box-details-2 background-color-light custom-box-shadow-3">
+                                            <i class="icon-graduation icons text-color-primary"></i>
+                                            <h4 class="font-weight-semibold text-color-dark m-0">Porto University</h4>
+                                            <p class="custom-text-color-2 mb-1">Master of Information Technology</p>
+                                            <strong class="text-color-primary">2001-2017</strong>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-sm-6 pb-4">
+                                        <div class="custom-box-details-2 background-color-light custom-box-shadow-3">
+                                            <i class="icon-graduation icons text-color-primary"></i>
+                                            <h4 class="font-weight-semibold text-color-dark m-0">Porto University</h4>
+                                            <p class="custom-text-color-2 mb-1">Master of Information Technology</p>
+                                            <strong class="text-color-primary">2001-2017</strong>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            @endif
-            @if ((bool)$configuracion->habilidades)
+
             <section id="skills" class="section section-no-border background-color-light m-0">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-md-6 col-lg-8 mb-4 mb-md-0">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <h2 class="text-color-quaternary text-uppercase font-weight-extra-bold">Habilidades & Idiomas</h2>
-                                    @for ($i = 0; $i < mitad(count($habilidades)); $i++)
+                                    <h2 class="text-color-quaternary text-uppercase font-weight-extra-bold">Skills & Language</h2>
                                     <div class="progress-bars custom-progress-bars">
                                         <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-                                            <span>{{ $habilidades[$i]->habilidad }}</span>
+                                            <span>Start Up</span>
                                         </div>
 
                                         <div class="progress mb-2">
-                                            <div class="progress-bar" data-appear-progress-animation="{{ $habilidades[$i]->cantidad }}%"></div>
+                                            <div class="progress-bar" data-appear-progress-animation="60%"></div>
                                         </div>
-                                    </div>
-                                    @endfor
-                                </div>
-                                <div class="col-lg-6">
-                                    @for ($i = mitad(count($habilidades)); $i < count($habilidades); $i++)
-                                    <div class="progress-bars custom-progress-bars custom-md-margin-top-1">
                                         <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-                                            <span>{{ $habilidades[$i]->habilidad }}</span>
+                                            <span>Innovation</span>
                                         </div>
                                         <div class="progress mb-2">
-                                            <div class="progress-bar" data-appear-progress-animation="{{ $habilidades[$i]->cantidad }}%"></div>
+                                            <div class="progress-bar" data-appear-progress-animation="80%" data-appear-animation-delay="300"></div>
+                                        </div>
+                                        <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
+                                            <span>Products</span>
+                                        </div>
+                                        <div class="progress mb-2">
+                                            <div class="progress-bar" data-appear-progress-animation="70%" data-appear-animation-delay="600"></div>
+                                        </div>
+                                        <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
+                                            <span>CSS</span>
+                                        </div>
+                                        <div class="progress mb-2">
+                                            <div class="progress-bar" data-appear-progress-animation="90%" data-appear-animation-delay="900"></div>
                                         </div>
                                     </div>
-                                    @endfor
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="progress-bars custom-progress-bars custom-md-margin-top-1">
+                                        <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
+                                            <span>Javascript</span>
+                                        </div>
+                                        <div class="progress mb-2">
+                                            <div class="progress-bar" data-appear-progress-animation="60%"></div>
+                                        </div>
+                                        <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
+                                            <span>Business</span>
+                                        </div>
+                                        <div class="progress mb-2">
+                                            <div class="progress-bar" data-appear-progress-animation="80%" data-appear-animation-delay="300"></div>
+                                        </div>
+                                        <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
+                                            <span>E-commerce</span>
+                                        </div>
+                                        <div class="progress mb-2">
+                                            <div class="progress-bar" data-appear-progress-animation="70%" data-appear-animation-delay="600"></div>
+                                        </div>
+                                        <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
+                                            <span>Creative</span>
+                                        </div>
+                                        <div class="progress mb-2">
+                                            <div class="progress-bar" data-appear-progress-animation="90%" data-appear-animation-delay="900"></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        @if ((bool)$configuracion->idiomas)
                         <div class="col-md-6 col-lg-4">
                             <div class="row">
                                 <div class="col">
                                     <div class="custom-box-details background-color-light custom-box-shadow-1">
-                                        <h4 class="text-color-dark">Idiomas</h4>
+                                        <h4 class="text-color-dark">Languages</h4>
                                         <ul class="custom-list-style-1 p-0">
-                                            @foreach ($idiomas as $item)
                                             <li>
-                                                <span class="font-weight-semibold custom-max-width-1 text-color-dark"><img src="img/blank.gif" class="flag flag-{{ flags($item->idioma) }} mr-1" alt="English">{{ $item->idioma }}:</span>
-                                                <span class="custom-text-color-2">{{ $item->nivel }}</span>
+                                                <span class="font-weight-semibold custom-max-width-1 text-color-dark"><img src="img/blank.gif" class="flag flag-us mr-1" alt="English">English:</span>
+                                                <span class="custom-text-color-2">Advanced</span>
                                             </li>
-                                            @endforeach
+                                            <li>
+                                                <span class="font-weight-semibold custom-max-width-1 text-color-dark"><img src="img/blank.gif" class="flag flag-es mr-1" alt="Spanish">Spanish:</span>
+                                                <span class="custom-text-color-2">Advanced</span>
+                                            </li>
+                                            <li>
+                                                <span class="font-weight-semibold custom-max-width-1 text-color-dark"><img src="img/blank.gif" class="flag flag-fr mr-1" alt="Française">French:</span>
+                                                <span class="custom-text-color-2">Basic</span>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        @endif
                     </div>
                 </div>
             </section>
-            @endif
-            @if ((bool)$configuracion->portafolio)
+
             <section id="portfolio" class="section section-no-border background-color-secondary m-0">
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <h2 class="text-color-quaternary font-weight-extra-bold text-uppercase">Portafolio</h2>
-
+                            <h2 class="text-color-quaternary font-weight-extra-bold text-uppercase">Portfolio</h2>
                             <ul class="nav nav-pills sort-source custom-nav-sort mb-4" data-sort-id="portfolio" data-option-key="filter">
                                 <li class="nav-item active" data-option-value="*"><a class="nav-link text-dark active" href="#">Show All</a></li>
                                 <li class="nav-item" data-option-value=".websites"><a class="nav-link text-dark" href="#">Websites</a></li>
@@ -512,8 +630,7 @@
                     </div>
                 </div>
             </section>
-            @endif
-            @if ((bool)$configuracion->recomendaciones)
+
             <section id="recommendations" class="section section-no-border background-color-primary m-0">
                 <div class="container">
                     <div class="row">
@@ -551,8 +668,7 @@
                     </div>
                 </div>
             </section>
-            @endif
-            @if ((bool)$configuracion->blog)
+
             <section id="blog" class="section section-no-border background-color-light m-0">
                 <div class="container">
                     <div class="row">
@@ -646,63 +762,66 @@
                     </div>
                 </div>
             </section>
-            @endif
+
             <div id="say-hello" class="container-fluid">
                 <div class="row">
                     <div class="col-lg-6 p-0">
                         <section class="section section-no-border background-color-primary h-100 m-0">
                             <div class="row justify-content-end m-0">
                                 <div class="col-half-section col-half-section-right mr-3">
-                                    <h2 class="text-color-quaternary text-uppercase font-weight-extra-bold">Contactame</h2>
-                                    {!! Form::open(['route'=>'contactame','method'=>'POST','class'=>'custom-form-style']) !!}
-                                        <div class="alert alert-success d-none mt-4" id="contactSuccess">
-                                            <strong>Enviado!</strong> Su mensaje ha sido enviado.
-                                        </div>
-
-                                        <div class="alert alert-danger d-none mt-4" id="contactError">
-                                            <strong>Error!</strong> There was an error sending your message.
-                                            <span class="text-1 mt-2 d-block" id="contactErrorMessage"></span>
-                                        </div>
+                                    <h2 class="text-color-quaternary text-uppercase font-weight-extra-bold">Say Hello</h2>
+                                    <form id="callSendMessage" class="custom-form-style" action="#" method="POST">
                                         <div class="form-content">
                                             <div class="form-control-custom">
-                                                <input type="text" class="form-control" name="nombre" placeholder="Tu nombre *" data-msg-required="This field is required." id="callName" required="" />
+                                                <input type="text" class="form-control" name="callName" placeholder="Your Name *" data-msg-required="This field is required." id="callName" required="" />
                                             </div>
                                             <div class="form-control-custom">
-                                                <input type="text" class="form-control" name="asunto" placeholder="Asunto *" data-msg-required="This field is required." id="callSubject" required="" />
+                                                <input type="text" class="form-control" name="callSubject" placeholder="Subject *" data-msg-required="This field is required." id="callSubject" required="" />
                                             </div>
                                             <div class="form-control-custom">
-                                                <textarea maxlength="5000" data-msg-required="por favor ingresa tu mensaje." rows="10" class="form-control" name="mensaje" placeholder="Mensaje*" id="message" required="" aria-required="true"></textarea>
+                                                <textarea maxlength="5000" data-msg-required="Please enter your message." rows="10" class="form-control" name="message" placeholder="Message*" id="message" required="" aria-required="true"></textarea>
                                             </div>
-                                            <input type="submit" class="btn btn-quaternary text-color-light text-uppercase font-weight-semibold outline-none custom-btn-style-2 custom-border-radius-1" value="Enviar" />
+                                            <input type="submit" class="btn btn-quaternary text-color-light text-uppercase font-weight-semibold outline-none custom-btn-style-2 custom-border-radius-1" value="Submit" />
                                         </div>
-                                    {!! Form::close() !!}
+                                    </form>
                                 </div>
                             </div>
                         </section>
                     </div>
                     <div class="col-lg-6 p-0">
-                        <section class="section section-no-border h-100 m-0" style="background: url({{ $configuracion->fondo }}); background-size: cover;">
+                        <section class="section section-no-border h-100 m-0" style="background: url(img/demos/resume/contact/contact-bg-1.jpg); background-size: cover;">
                             <div class="row m-0">
                                 <div class="col-half-section col-half-section-left ml-3">
-                                    <a href="mailto:{{ $datos->email }}" class="text-decoration-none">
+                                    <a href="mailto:you@domain.com" class="text-decoration-none">
                                         <span class="feature-box custom-feature-box align-items-center mb-4">
                                             <span class="custom-feature-box-icon">
                                                 <i class="icon-envelope icons text-color-light"></i>
                                             </span>
                                             <span class="feature-box-info">
                                                 <span class="custom-label font-weight-semibold text-uppercase custom-text-color-1">Email</span>
-                                                <strong class="font-weight-light text-color-light custom-opacity-effect-1">{{ $datos->email }}</strong>
+                                                <strong class="font-weight-light text-color-light custom-opacity-effect-1">you@domain.com</strong>
                                             </span>
                                         </span>
                                     </a>
-                                    <a href="tel:{{ $datos->telefono }}" class="text-decoration-none">
+                                    <a href="tel:+1234657890" class="text-decoration-none">
                                         <span class="feature-box custom-feature-box align-items-center mb-4">
                                             <span class="custom-feature-box-icon">
                                                 <i class="icon-phone icons text-color-light"></i>
                                             </span>
                                             <span class="feature-box-info">
-                                                <span class="custom-label font-weight-semibold text-uppercase custom-text-color-1">Telefono</span>
-                                                <strong class="font-weight-light text-color-light custom-opacity-effect-1">{{ $datos->telefono }}</strong>
+                                                <span class="custom-label font-weight-semibold text-uppercase custom-text-color-1">Phone</span>
+                                                <strong class="font-weight-light text-color-light custom-opacity-effect-1">123-456-7890</strong>
+                                            </span>
+                                        </span>
+                                    </a>
+                                    <a href="skype:yourskype?chat" class="text-decoration-none">
+                                        <span class="feature-box custom-feature-box align-items-center mb-4">
+                                            <span class="custom-feature-box-icon">
+                                                <i class="icon-social-skype icons text-color-light"></i>
+                                            </span>
+                                            <span class="feature-box-info">
+                                                <span class="custom-label font-weight-semibold text-uppercase custom-text-color-1">Skype</span>
+                                                <strong class="font-weight-light text-color-light custom-opacity-effect-1">yourskype</strong>
                                             </span>
                                         </span>
                                     </a>
@@ -739,7 +858,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12 m-0">
-                                <p class="custom-text-color-2">© Copyright 2017. All Rights Reserved.</p>
+                                <p class="custom-text-color-2">© Copyright 2018. All Rights Reserved.</p>
                             </div>
                         </div>
                     </div>
@@ -770,6 +889,9 @@
         <!-- Current Page Vendor and Views -->
         <script src="vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
         <script src="vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+        <!-- Current Page Vendor and Views -->
+        <script src="js/views/view.contact.js"></script>
 
         <!-- Demo -->
         <script src="js/demos/demo-resume.js"></script>

@@ -19,7 +19,8 @@ class Curriculum
 
 	public function getRequest($id,$name,$isarray=false,$type='GET')
 	{
-		$url = '/api/'.$id.'/'.$name;
+		$sufijo = '?_format=json';
+		$url = '/api/'.$id.'/'.$name.$sufijo;
 		$response = $this->client->request($type,$url);
 
 		$data = json_decode($response->getBody()->getContents());

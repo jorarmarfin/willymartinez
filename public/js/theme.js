@@ -1,7 +1,7 @@
 /*
 Name: 			Theme Base
 Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	6.0.0
+Theme Version:	6.2.1
 */
 
 // Theme
@@ -47,9 +47,9 @@ window.theme.fn = {
 
 	PluginAnimate.defaults = {
 		accX: 0,
-		accY: -150,
-		delay: 1,
-		duration: '1s'
+		accY: -80,
+		delay: 100,
+		duration: '750ms'
 	};
 
 	PluginAnimate.prototype = {
@@ -86,45 +86,41 @@ window.theme.fn = {
 			var self = this,
 				$el = this.options.wrapper,
 				delay = 0,
-				duration = '1s',
+				duration = this.options.duration,
 				elTopDistance = $el.offset().top,
 				windowTopDistance = $(window).scrollTop();
 
-			$(document).ready(function(){
+			$el.addClass('appear-animation animated');
 
-				$el.addClass('appear-animation animated');
+			if (!$('html').hasClass('no-csstransitions') && $(window).width() > 767 && elTopDistance > windowTopDistance) {
 
-				if (!$('html').hasClass('no-csstransitions') && $(window).width() > 767 && elTopDistance > windowTopDistance) {
+				$el.appear(function() {
 
-					$el.appear(function() {
+					$el.one('animation:show', function(ev) {
+						delay = ($el.attr('data-appear-animation-delay') ? $el.attr('data-appear-animation-delay') : self.options.delay);
+						duration = ($el.attr('data-appear-animation-duration') ? $el.attr('data-appear-animation-duration') : self.options.duration);
 
-						$el.one('animation:show', function(ev) {
-							delay = ($el.attr('data-appear-animation-delay') ? $el.attr('data-appear-animation-delay') : self.options.delay);
-							duration = ($el.attr('data-appear-animation-duration') ? $el.attr('data-appear-animation-duration') : self.options.duration);
+						if (duration != '750ms') {
+							$el.css('animation-duration', duration);
+						}
 
-							if (duration != '1s') {
-								$el.css('animation-duration', duration);
-							}
+						$el.css('animation-delay', delay + 'ms');
 
-							setTimeout(function() {
-								$el.addClass($el.attr('data-appear-animation') + ' appear-animation-visible');
-							}, delay);
-						});
-
-						$el.trigger('animation:show');
-
-					}, {
-						accX: self.options.accX,
-						accY: self.options.accY
+						$el.addClass($el.attr('data-appear-animation') + ' appear-animation-visible');
 					});
 
-				} else {
+					$el.trigger('animation:show');
 
-					$el.addClass('appear-animation-visible');
+				}, {
+					accX: self.options.accX,
+					accY: self.options.accY
+				});
 
-				}
+			} else {
 
-			});
+				$el.addClass('appear-animation-visible');
+
+			}
 
 			return this;
 		}
@@ -267,6 +263,16 @@ window.theme.fn = {
 
 			// Initialize OwlCarousel
 			$el.owlCarousel(this.options).addClass('owl-carousel-init');
+
+			// Sync
+			if ($el.attr('data-sync')) {
+				$el.on('change.owl.carousel', function(event) {
+					if (event.namespace && event.property.name === 'position') {
+					    var target = event.relatedTarget.relative(event.property.value, true);
+					    $( $el.data('sync') ).owlCarousel('to', target, 300, true);				        
+				  	}
+				});
+			}
 
 			return this;
 		}
@@ -1528,7 +1534,7 @@ window.theme.fn = {
 				wrapper: $('body'),
 				offset: 150,
 				buttonClass: 'scroll-to-top',
-				iconClass: 'fa fa-chevron-up',
+				iconClass: 'fas fa-chevron-up',
 				delay: 1000,
 				visibleMobile: false,
 				label: false,
@@ -2417,7 +2423,9 @@ window.theme.fn = {
 				);
 			}
 
-			this.options.wrapper.vide(this.options.path, this.options);
+			this.options.wrapper
+				.vide(this.options.path, this.options)
+				.first().css('z-index', 0);
 
 			return this;
 		}
@@ -2508,32 +2516,44 @@ window.theme.fn = {
 			$el				
 				.addClass("active");
 
-			setInterval(function() {
+			(function loop(){
+			   	
+			   	setTimeout(function(){
 
-				currentTop = (currentItem * $el.height());
-				currentItem++;
+				    currentTop = (currentItem * $el.height());
+					currentItem++;
 
-				if(currentItem <= items.length) {
-					itemWidth = items.eq(currentItem-1).width();
-				} else {
-					itemWidth = items.eq(0).width();
-				}
-
-				itemsWrapper.animate({
-					top: -(currentTop) + "px",
-					width: itemWidth + "px"
-				}, self.options.animDelay, "easeOutQuad", function() {
-
-					if(currentItem > items.length) {
-
-						itemsWrapper.css("top", 0);
-						currentItem = 1;
-
+					if(currentItem <= items.length) {
+						itemWidth = items.eq(currentItem-1).width();
+					} else {
+						itemWidth = items.eq(0).width();
 					}
 
-				});
+					itemsWrapper.css({ 
+						width: itemWidth + "px",
+						transform: "translate3d(0, "+ -(currentTop) +"px, 0)",
+						transition: "ease transform "+ self.options.animDelay +"ms, ease width 300ms" 
+					})
+				   	.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+						if(currentItem > items.length) {
 
-			}, self.options.delay);
+							setTimeout(function(){
+								itemsWrapper.css({ 'transition-duration': "0ms" });
+								itemsWrapper.css({
+									transform: "translate3d(0, 0, 0)"
+								});
+							}, self.options.animDelay);
+
+							currentItem = 1;
+
+						}
+					});
+
+				    loop();
+
+			   	}, self.options.delay);
+
+			})();
 
 			return this;
 		}
@@ -2600,14 +2620,20 @@ window.theme.fn = {
 				var self = this;
 
 				$(window).on('load', function(){
-					self.$wrapper.find('input').on('focus', function() {
-						self.$wrapper.addClass('open');
+					$(document).ready(function(){
+						setTimeout(function(){
 
-						$(document).mouseup(function(e) {
-							if (!self.$wrapper.is(e.target) && self.$wrapper.has(e.target).length === 0) {
-								self.$wrapper.removeClass('open');
-							}
-						});
+							self.$wrapper.find('input').on('focus', function() {
+								self.$wrapper.addClass('open');
+
+								$(document).mouseup(function(e) {
+									if (!self.$wrapper.is(e.target) && self.$wrapper.has(e.target).length === 0) {
+										self.$wrapper.removeClass('open');
+									}
+								});
+							});
+
+						}, 1500);
 					});
 				});
 
@@ -2688,7 +2714,7 @@ window.theme.fn = {
 					thumbInfoPreview;
 
 				// Add Arrows
-				$header.find('.dropdown-toggle, .dropdown-submenu > a').append($('<i />').addClass('fa fa-caret-down'));
+				$header.find('.dropdown-toggle, .dropdown-submenu > a').append($('<i />').addClass('fas fa-caret-down'));
 
 				// Preview Thumbs
 				self.$wrapper.find('a[data-thumb-preview]').each(function() {
@@ -2703,24 +2729,26 @@ window.theme.fn = {
 
 				// Side Header Right (Reverse Dropdown)
 				if($html.hasClass('side-header-right')) {
-					$header.find('.dropdown-menu').addClass('dropdown-reverse');
+					$header.find('.dropdown-submenu').addClass('dropdown-reverse');
 				} else {
 					// Reverse
 					self.checkReverse = function() {
 
-						self.$wrapper.find('.dropdown-menu').removeClass('dropdown-reverse');
+						self.$wrapper.find('.dropdown-submenu').removeClass('dropdown-reverse');
 
 						self.$wrapper.find('.dropdown-submenu:not(.manual)').each(function() {
 							if(!$(this).find('.dropdown-menu').visible( false, true, 'horizontal' )  ) {
-								$(this).find('.dropdown-menu').addClass('dropdown-reverse');
+								$(this).addClass('dropdown-reverse');
 							}
 						});
 					}
 
 					self.checkReverse();
 
-	 				$(window).afterResize(function() {
-						self.checkReverse();
+	 				$(document).ready(function(){
+		 				$(window).afterResize(function() {
+							self.checkReverse();
+		 				});
 	 				});
 				}
 
@@ -2789,7 +2817,7 @@ window.theme.fn = {
 
 				// Collapse Nav
 				$header.find('[data-collapse-nav]').on('click', function(e) {
-					$(this).parents('.collapse').removeClass('in');
+					$(this).parents('.collapse').removeClass('show');
 				});
 
 				
@@ -2810,18 +2838,20 @@ window.theme.fn = {
 				});
 
 				// Side Header - Change value of initial header body height
-				if( $window.width() > 991 ) {
-					var flag = false;
-					
-					$window.afterResize(function(){
+				$(document).ready(function(){
+					if( $window.width() > 991 ) {
+						var flag = false;
+						
+						$window.afterResize(function(){
 
-						if( $window.width() < 992 && flag == false ) {
-							headerBodyHeight = $('.header-body').outerHeight();
-							flag = true;
-						}
+							if( $window.width() < 992 && flag == false ) {
+								headerBodyHeight = $('.header-body').outerHeight();
+								flag = true;
+							}
 
-					});
-				}
+						});
+					}
+				});
 
 				// Anchors Position
 				$('[data-hash]').each(function() {
@@ -2833,10 +2863,14 @@ window.theme.fn = {
 						$(this).on('click', function(e) {
 							e.preventDefault();
 
-							// Close Collapse if Opened
-							$(this).parents('.collapse.in').removeClass('in');
+							if( !$(e.target).is('i') ) {
 
-							self.scrollToTarget(target, offset);
+								// Close Collapse if Opened
+								$(this).parents('.collapse.show').collapse('hide');
+
+								self.scrollToTarget(target, offset);
+								
+							}
 
 							return;
 						});
@@ -3110,7 +3144,9 @@ window.theme.fn = {
 				}
 
 				// Set Wrapper Min-Height
-				self.options.wrapper.css('min-height', self.options.wrapper.height());
+				if( !sideHeader ) {
+					self.options.wrapper.css('min-height', self.options.wrapper.height());
+				}
 
 				// Check Sticky Header
 				self.checkStickyHeader = function() {
@@ -3170,6 +3206,11 @@ window.theme.fn = {
 					self.activateStickyHeader();
 				}
 
+				// Notice Top Bar
+				if ($('.notice-top-bar').get(0)) {
+					self.options.stickyStartAt = $('.notice-top-bar').outerHeight();
+				}
+
 				// Set Logo
 				if (self.options.stickyChangeLogo) {
 
@@ -3210,6 +3251,25 @@ window.theme.fn = {
 
 				}
 
+				// Side Header
+				var headerBodyHeight,
+					flag = false;
+
+				self.checkSideHeader = function() {
+					if($window.width() < 992 && flag == false) {
+						headerBodyHeight = self.options.headerBody.height();
+						flag = true;
+					}
+
+					if(self.options.stickyStartAt == 0 && sideHeader) {
+						self.options.wrapper.css('min-height', 0);
+					}
+
+					if(self.options.stickyStartAt > 0 && sideHeader && $window.width() < 992) {
+						self.options.wrapper.css('min-height', headerBodyHeight);
+					}
+				}
+
 				return this;
 			},
 
@@ -3227,6 +3287,10 @@ window.theme.fn = {
 				} else {
 					self.activateStickyHeader();
 				}
+
+				$(window).on('load resize', function(){
+					self.checkSideHeader();
+				});
 
 				return this;
 			}

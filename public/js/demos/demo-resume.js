@@ -1,7 +1,7 @@
 /*
 Name: 			Resume
 Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	6.0.0
+Theme Version:	6.2.1
 */
 
 (function( $ ) {
@@ -53,81 +53,17 @@ Theme Version:	6.0.0
 		timelineHeightAdjust.build();
 	}
 
-	// Contact Form
+	// Contact Form Validate
 	$('#callSendMessage').validate({
-		submitHandler: function(form) {
-
-			var $form = $(form),
-				$messageSuccess = $('#contactSuccess'),
-				$messageError = $('#contactError'),
-				$submitButton = $(this.submitButton),
-				$errorMessage = $('#contactErrorMessage'),
-				submitButtonText = $submitButton.val();
-
-			$submitButton.val( $submitButton.data('loading-text') ? $submitButton.data('loading-text') : 'Loading...' ).attr('disabled', true);
-
-			// Ajax Submit
-			$.ajax({
-				type: 'POST',
-				url: $form.attr('action'),
-				data: {
-					name: $form.find('#callName').val(),
-					subject: $form.find('#callSubject').val(),
-					message: $form.find('#message').val(),
-					email: 'you@domain.com'
-				}
-			}).always(function(data, textStatus, jqXHR) {
-
-				$errorMessage.empty().hide();
-
-				if (data.response == 'success') {
-
-					$messageSuccess.removeClass('d-none');
-					$messageError.addClass('d-none');
-
-					// Reset Form
-					$form.find('.form-control')
-						.val('')
-						.blur()
-						.parent()
-						.removeClass('has-success')
-						.removeClass('has-danger')
-						.find('label.error')
-						.remove();
-
-					if (($messageSuccess.offset().top - 80) < $(window).scrollTop()) {
-						$('html, body').animate({
-							scrollTop: $messageSuccess.offset().top - 80
-						}, 300);
-					}
-
-					$form.find('.form-control').removeClass('error');
-
-					$submitButton.val( submitButtonText ).attr('disabled', false);
-					
-					return;
-
-				} else if (data.response == 'error' && typeof data.errorMessage !== 'undefined') {
-					$errorMessage.html(data.errorMessage).show();
-				} else {
-					$errorMessage.html(data.responseText).show();
-				}
-
-				$messageError.removeClass('d-none');
-				$messageSuccess.addClass('d-none');
-
-				if (($messageError.offset().top - 80) < $(window).scrollTop()) {
-					$('html, body').animate({
-						scrollTop: $messageError.offset().top - 80
-					}, 300);
-				}
-
-				$form.find('.has-success')
-					.removeClass('has-success');
-					
-				$submitButton.val( submitButtonText ).attr('disabled', false);
-
-			});
+		onkeyup: false,
+		onclick: false,
+		onfocusout: false,
+		errorPlacement: function(error, element) {
+			if (element.attr('type') == 'radio' || element.attr('type') == 'checkbox') {
+				error.appendTo(element.parent().parent());
+			} else {
+				error.insertAfter(element);
+			}
 		}
 	});
 
@@ -184,5 +120,26 @@ Theme Version:	6.0.0
 			menuFloatingAnim.build();
 		}
 	}
+
+	$('[data-hash]').off().each(function() {
+
+		var target = $(this).attr('href'),
+			offset = ($(this).is("[data-hash-offset]") ? $(this).data('hash-offset') : 0);
+
+		if($(target).get(0)) {
+			$(this).on('mousedown', function(e) {
+				e.preventDefault();
+
+					$('html, body').animate({
+						scrollTop: $(target).offset().top - offset
+					}, 600, 'easeOutQuad', function() {
+
+					});
+
+				return;
+			});
+		}
+
+	});
 
 }).apply( this, [ jQuery ]);
