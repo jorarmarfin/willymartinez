@@ -6,7 +6,7 @@ use GuzzleHttp\Client;
 /**
 * Clase de conexion con drupal
 */
-class Curriculum
+class Drupal
 {
 	private $client;
 
@@ -25,7 +25,7 @@ class Curriculum
 
 		$data = json_decode($response->getBody()->getContents());
 
-		if($isarray)return $data[0];
-		else return $data;
+		if($isarray)return $data;
+		else return $data[0];
 	}
 }

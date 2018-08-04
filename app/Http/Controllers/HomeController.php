@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ContactEmail;
-use App\Repositories\Curriculum;
+use App\Repositories\Drupal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
-	private $curriculum;
+	private $drupal;
 	private $iduser;
 
-	public function __construct(Curriculum $curriculum)
+	public function __construct(Drupal $drupal)
 	{
-		$this->curriculum = $curriculum;
+		$this->drupal = $drupal;
 		$this->iduser = 1;
 	}
 
@@ -32,17 +32,16 @@ class HomeController extends Controller
             }
         }
         $exp_des = $experiencia[$llave];*/
-        $datos = [];
-    	$configuracion = $this->curriculum->getRequest($this->iduser,'configuracion',true);
+        /*$datos = [];
         $experiencia = [];
         $educacion = [];
         $habilidades = [];
         $idiomas = [];
-        $exp_des = [];
+        $exp_des = [];*/
+        $configuracion = $this->drupal->getRequest($this->iduser,'configuracion',false);
+    	$datos = $this->drupal->getRequest($this->iduser,'datos-personales',false);
 
-
-
-    	return view('index',compact('datos','configuracion','experiencia','exp_des','educacion','habilidades','idiomas'));
+    	return view('index',compact('configuracion','datos'));
     }
     public function sendemail(Request $request)
     {
