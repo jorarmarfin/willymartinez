@@ -10,16 +10,16 @@
                             <div class="row">
                                 <div class="experience-info col-lg-3 col-sm-5 background-color-primary">
                                     <span class="from text-color-dark text-uppercase">
-                                        From
+                                        desde
                                         <span class="font-weight-semibold">{{ Carbon\Carbon::parse($item->fecha_inicio)->format('M Y') }}</span>
                                     </span>
                                     <span class="to text-color-dark text-uppercase">
-                                        To
+                                        al
                                         <span class="font-weight-semibold">
                                         @if ($item->vigente == 'SI')
                                             Actualmente
                                         @else
-                                            {{ Carbon\Carbon::parse($item->fecha_inicio)->format('M Y') }}
+                                            {{ Carbon\Carbon::parse($item->fecha_fin)->format('M Y') }}
                                         @endif
                                         </span>
                                     </span>

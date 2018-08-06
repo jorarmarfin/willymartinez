@@ -32,24 +32,30 @@
                                                 <span class="custom-tooltip">Habilidades</span>
                                             </a>
                                         </li>
+                                        @if ($configuracion->mostrar_portafolio=='SI')
                                         <li>
                                             <a data-hash href="#portfolio" class="nav-link text-color-dark background-color-primary">
                                                 <i class="icon-diamond icons"></i>
                                                 <span class="custom-tooltip">Portafolio</span>
                                             </a>
                                         </li>
+                                        @endif
+                                        @if ($configuracion->mostrar_recomendaciones=='SI')
                                         <li>
                                             <a data-hash href="#recommendations" class="nav-link text-color-dark background-color-primary">
                                                 <i class="icon-pencil icons"></i>
-                                                <span class="custom-tooltip">Recommendations</span>
+                                                <span class="custom-tooltip">Recommendaciones</span>
                                             </a>
                                         </li>
+                                        @endif
+                                        @if ($configuracion->mostrar_blog=='SI')
                                         <li>
                                             <a data-hash href="#blog" class="nav-link text-color-dark background-color-primary">
                                                 <i class="icon-bubbles icons"></i>
                                                 <span class="custom-tooltip">Blog</span>
                                             </a>
                                         </li>
+                                        @endif
                                         <li>
                                             <a data-hash href="#say-hello" class="nav-link text-color-dark background-color-primary">
                                                 <i class="icon-envelope-open icons"></i>

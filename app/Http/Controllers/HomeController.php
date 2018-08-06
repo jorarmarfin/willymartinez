@@ -21,32 +21,46 @@ class HomeController extends Controller
 
     public function index()
     {
-/*    	$datos = $this->curriculum->getRequest($this->iduser,'mydata',true);
-        $idiomas = $this->curriculum->getRequest($this->iduser,'idiomas');
-        $llave = '';
-        foreach ($experiencia as $key => $value) {
-            if ($value->destacar == 1) {
-                $llave = $key;
-            }
-        }
-        $exp_des = $experiencia[$llave];*/
-        /*$datos = [];
-        $experiencia = [];
-        $educacion = [];
-        $habilidades = [];
-        $idiomas = [];
-        $exp_des = [];*/
         $configuracion = $this->drupal->getRequest($this->iduser,'configuracion',false);
         $datos = $this->drupal->getRequest($this->iduser,'datos-personales',false);
         $datos->edad = Carbon::createFromFormat('Y-m-d',$datos->fecha_nacimiento)->age;
+        $redes= $this->PreparaRedes($datos->redes_sociales);
         $experiencia = $this->drupal->getRequest($this->iduser,'experiencia',true);
         $educacion = $this->drupal->getRequest($this->iduser,'educacion',true);
-        $habilidades = $this->drupal->getRequest($this->iduser,'habilidades');
+        $habilidades = $this->drupal->getRequest($this->iduser,'habilidades',true);
+        $idiomas = $this->drupal->getRequest($this->iduser,'idiomas',true);
+        //$portafolio = $this->drupal->getRequest($this->iduser,'portafolio',true);
 
-        return view('index',compact('configuracion','datos','experiencia','educacion','habilidades'));
+        return view('index',compact('configuracion','datos','experiencia','educacion','habilidades','redes','idiomas'));
+    }
+    public function PreparaRedes($misredes)
+    {
+        $redes_sociales = explode('<br />',$misredes);
+        $redes = [];
+        $i = 0;
+        foreach ($redes_sociales as $key => $item) {
+            $puntero = strpos($item,'|',1);
+            $red = trim(substr($item,0,$puntero));
+            $slug = str_slug($red);
+            $vinculo = substr($item,$puntero+1,strlen($item)-$puntero);
+
+            array_push($redes,['red'=>$red,'vinculo'=>$vinculo,'slug'=>$slug]);
+            $i++;
+        }
+        return $redes;
     }
     public function sendemail(Request $request)
     {
+        /*
+        MAIL_DRIVER=smtp
+        MAIL_HOST=mail.smtp2go.com
+        MAIL_PORT=2525
+        MAIL_USERNAME=curriculum
+        MAIL_PASSWORD=YmJpeHJkNXhsY2ow
+        MAIL_ENCRYPTION=tls
+        MAIL_FROM_ADDRESS=mycurriculum@sahost.com.pe
+        MAIL_FROM_NAME='My Curriculum'
+         */
     	/*Envio de Email*/
         $datos = $request->all();
         Mail::to('luis.mayta@gmail.com','Luis Mayta')

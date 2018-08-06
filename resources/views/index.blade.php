@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>Demo Resume | Porto - Responsive HTML5 Template 6.2.1</title>
+        <title>Curriculum | {{ $datos->nombre_completo }}</title>
 
         <meta name="keywords" content="HTML5 Template" />
         <meta name="description" content="Porto - Responsive HTML5 Template">
@@ -41,7 +41,6 @@
                 <div class="container">
                     <div class="row">
                         <div class="col">
-
                             <div class="custom-box-details background-color-light custom-box-shadow-1 col-lg-6 ml-5 mb-5 mb-lg-4 float-right clearfix">
                                 <h4>Personal Details</h4>
                                 <div class="row">
@@ -94,14 +93,18 @@
                     </div>
                 </div>
             </section>
-
-
             @include('web.experience')
             @include('web.education')
             @include('web.skills')
-            @include('web.portfolio')
-            @include('web.recommendations')
-            @include('web.blog')
+            @if ($configuracion->mostrar_portafolio=='SI')
+                @include('web.portfolio')
+            @endif
+            @if ($configuracion->mostrar_recomendaciones=='SI')
+                @include('web.recommendations')
+            @endif
+            @if ($configuracion->mostrar_blog=='SI')
+                @include('web.blog')
+            @endif
             @include('web.say-hello')
             @include('web.footer')
         </div>

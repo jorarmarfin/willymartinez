@@ -28,21 +28,17 @@
         </div>
     </div>
     <ul class="social-icons custom-social-icons">
-        <li class="social-icons-facebook">
-            <a href="http://www.facebook.com/" target="_blank" title="Facebook">
-                <i class="fab fa-facebook-f"></i>
+        @foreach ($redes as $item)
+        <li class="social-icons-{{ $item['slug']}}">
+            <a href="{{ $item['vinculo'] }}" target="_blank" title="{{ $item['red']}}">
+                @if ($item['slug']=='facebook')
+                <i class="fab fa-{{ $item['slug']}}-f"></i>
+                @else
+                <i class="fab fa-{{ $item['slug']}}"></i>
+                @endif
             </a>
         </li>
-        <li class="social-icons-twitter">
-            <a href="http://www.twitter.com/" target="_blank" title="Twitter">
-                <i class="fab fa-twitter"></i>
-            </a>
-        </li>
-        <li class="social-icons-youtube">
-            <a href="http://www.youtube.com/" target="_blank" title="Youtube">
-                <i class="fab fa-youtube"></i>
-            </a>
-        </li>
+        @endforeach
     </ul>
 </section>
 
