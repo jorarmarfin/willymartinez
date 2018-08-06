@@ -1,1 +1,5 @@
 /* Add here all your CSS customizations */
+.texto-email{
+	text-transform: lowercase;
+    font-size: .9em;
+}

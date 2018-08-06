@@ -48,16 +48,16 @@
                                     <div class="col-md-6">
                                         <ul class="custom-list-style-1 p-0 mb-0">
                                             <li>
-                                                <span class="text-color-dark">Birthday:</span>
-                                                <span class="custom-text-color-2">1990 October 2</span>
+                                                <span class="text-color-dark">Edad:</span>
+                                                <span class="custom-text-color-2">{{ $datos->edad }}</span>
                                             </li>
                                             <li>
-                                                <span class="text-color-dark">Marital:</span>
-                                                <span class="custom-text-color-2">Single</span>
+                                                <span class="text-color-dark">Estado Civil:</span>
+                                                <span class="custom-text-color-2">{{ $datos->estado_civil }}</span>
                                             </li>
                                             <li>
-                                                <span class="text-color-dark">Nationality:</span>
-                                                <span class="custom-text-color-2">American</span>
+                                                <span class="text-color-dark">Nacionalidad:</span>
+                                                <span class="custom-text-color-2">{{ $datos->nacionalidad }}</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -68,12 +68,12 @@
                                                 <span class="custom-text-color-2"><a class="custom-text-color-2" href="skype:yourskype?chat">yourskype</a></span>
                                             </li>
                                             <li>
-                                                <span class="text-color-dark">PHONE:</span>
-                                                <span class="custom-text-color-2"><a class="custom-text-color-2" href="tel:123456789">123-456-789</a></span>
+                                                <span class="text-color-dark">Teléfono:</span>
+                                                <span class="custom-text-color-2"><a class="custom-text-color-2" href="tel:{{ $datos->telefono }}">{{ $datos->telefono }}</a></span>
                                             </li>
                                             <li>
-                                                <span class="text-color-dark">EMAIL:</span>
-                                                <span class="custom-text-color-2"><a class="custom-text-color-2" href="mailto:me@domain.com">me@domain.com</a></span>
+                                                <span class="text-color-dark">Email:</span>
+                                                <span class="custom-text-color-2"><a class="custom-text-color-2 texto-email" href="mailto:{{ $datos->email }}">{{ $datos->email }}</a></span>
                                             </li>
                                         </ul>
                                     </div>

@@ -11,31 +11,31 @@
                                         <li>
                                             <a data-hash href="#about-me" class="nav-link text-color-dark background-color-primary">
                                                 <i class="icon-home icons"></i>
-                                                <span class="custom-tooltip">About Me</span>
+                                                <span class="custom-tooltip">Sobre mi</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a data-hash href="#experience" class="nav-link text-color-dark background-color-primary">
                                                 <i class="icon-eye icons"></i>
-                                                <span class="custom-tooltip">Experience</span>
+                                                <span class="custom-tooltip">Experiencia</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a data-hash href="#education" class="nav-link text-color-dark background-color-primary">
                                                 <i class="icon-briefcase icons"></i>
-                                                <span class="custom-tooltip">Education</span>
+                                                <span class="custom-tooltip">Educación</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a data-hash href="#skills" class="nav-link text-color-dark background-color-primary">
                                                 <i class="icon-graduation icons"></i>
-                                                <span class="custom-tooltip">Skills</span>
+                                                <span class="custom-tooltip">Habilidades</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a data-hash href="#portfolio" class="nav-link text-color-dark background-color-primary">
                                                 <i class="icon-diamond icons"></i>
-                                                <span class="custom-tooltip">Portfolio</span>
+                                                <span class="custom-tooltip">Portafolio</span>
                                             </a>
                                         </li>
                                         <li>
@@ -53,7 +53,7 @@
                                         <li>
                                             <a data-hash href="#say-hello" class="nav-link text-color-dark background-color-primary">
                                                 <i class="icon-envelope-open icons"></i>
-                                                <span class="custom-tooltip">Say Hello</span>
+                                                <span class="custom-tooltip">Contactame</span>
                                             </a>
                                         </li>
                                     </ul>
