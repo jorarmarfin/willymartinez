@@ -29,9 +29,13 @@
                                         <span class="company-location text-color-dark font-weight-normal text-uppercase">{{ $item->oficina }}</span>
                                     </span>
                                 </div>
-                                <div class="experience-description col-lg-9 col-sm-7 background-color-light">
+                                <div class="experience-description col-lg-9 col-sm-7 background-color-light"
+                                        data-toggle="modal"
+                                        data-target="#ExperienciaDetalle"
+                                        data-nombre='luis'>
                                     <h4 class="text-color-dark font-weight-semibold">{{ $item->institucion }}</h4>
-                                    {!! $item->descripcion !!}
+                                    {!! $item->resumen !!}
+                                    {{-- <a href="#" class="btn-tertiary text-uppercase custom-btn-style-1 text-1">Ver más</a> --}}
                                 </div>
                             </div>
                         </article>
@@ -45,3 +49,21 @@
         </div>
     </div>
 </section>
+<!-- Modal -->
+<div class="modal fade" id="ExperienciaDetalle" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="defaultModalLabel">Default Modal Title</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc <a href="#">vehicula</a> lacinia. Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In eu justo a felis faucibus ornare vel id metus. Vestibulum ante ipsum primis in faucibus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc <a href="#">vehicula</a> lacinia. Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In eu justo a felis faucibus ornare vel id metus. Vestibulum ante ipsum primis in faucibus.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
