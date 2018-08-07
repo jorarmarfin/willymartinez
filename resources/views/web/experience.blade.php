@@ -32,10 +32,14 @@
                                 <div class="experience-description col-lg-9 col-sm-7 background-color-light"
                                         data-toggle="modal"
                                         data-target="#ExperienciaDetalle"
-                                        data-nombre='luis'>
-                                    <h4 class="text-color-dark font-weight-semibold">{{ $item->institucion }}</h4>
-                                    {!! $item->resumen !!}
-                                    {{-- <a href="#" class="btn-tertiary text-uppercase custom-btn-style-1 text-1">Ver más</a> --}}
+                                        data-nombre='luis'
+                                        data-institucion="{{ $item->institucion }}"
+                                        data-cargo="{{ $item->cargo }}"
+                                        data-descripcion="{{ $item->descripcion }}"
+                                        data-referencia="{{ $item->referencia }}"
+                                        >
+                                    <h4 class="text-color-dark font-weight-semibold">{{ $item->cargo }}</h4>
+                                    {!! $item->resumen !!} <p>Ver más</p>
                                 </div>
                             </div>
                         </article>
@@ -53,16 +57,22 @@
 <div class="modal fade" id="ExperienciaDetalle" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="defaultModalLabel">Default Modal Title</h4>
+            <div class="modal-header background-color-primary">
+                <h4 class="modal-title" id="m_institucion">Default Modal Title</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc <a href="#">vehicula</a> lacinia. Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In eu justo a felis faucibus ornare vel id metus. Vestibulum ante ipsum primis in faucibus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc <a href="#">vehicula</a> lacinia. Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In eu justo a felis faucibus ornare vel id metus. Vestibulum ante ipsum primis in faucibus.</p>
+                <div class="row">
+                    <div class="col-md-4"><h4>Cargo ocupado: </h4></div><!--span-->
+                    <div class="col-md-8"><span id="m_cargo" class="text-uppercase"></span></div><!--span-->
+                </div><!--row-->
+                <h4>Descripción del cargo</h4>
+                <div id="m_descripcion"></div>
+                <h4>Referencia</h4>
+                <div id="m_referencia"></div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-tertiary text-uppercase custom-btn-style-1 text-1" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
