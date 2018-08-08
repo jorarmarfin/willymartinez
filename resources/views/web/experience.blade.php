@@ -72,7 +72,7 @@
                 <div id="m_referencia"></div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-tertiary text-uppercase custom-btn-style-1 text-1" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-tertiary text-uppercase custom-btn-style-1 text-1" data-dismiss="modal">Cerrar</button>
             </div>
         </div>
     </div>

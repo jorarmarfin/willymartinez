@@ -22,13 +22,13 @@
                                         </li>
                                         <li>
                                             <a data-hash href="#education" class="nav-link text-color-dark background-color-primary">
-                                                <i class="icon-briefcase icons"></i>
+                                                <i class="icon-graduation icons"></i>
                                                 <span class="custom-tooltip">Educación</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a data-hash href="#skills" class="nav-link text-color-dark background-color-primary">
-                                                <i class="icon-graduation icons"></i>
+                                                <i class="icon-briefcase icons"></i>
                                                 <span class="custom-tooltip">Habilidades</span>
                                             </a>
                                         </li>

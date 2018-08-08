@@ -9,7 +9,10 @@
                             @foreach ($habilidades as $item)
                             @if ($loop->index%2==0)
                             <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-                                <span>{{ $item->habilidad }}</span>
+                                <span>
+                                    <i class="fab fa-{{ str_slug($item->habilidad) }}"></i>
+                                    {{ $item->habilidad }}
+                                </span>
                             </div>
                             <div class="progress mb-2">
                                 <div class="progress-bar" data-appear-progress-animation="{{ $item->porcentaje }}"></div>
@@ -24,7 +27,10 @@
                             @foreach ($habilidades as $item)
                             @if ($loop->index%2!=0)
                             <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-                                <span>{{ $item->habilidad }}</span>
+                                <span>
+                                    <i class="fab fa-{{ str_slug($item->habilidad) }}"></i>
+                                    {{ $item->habilidad }}
+                                </span>
                             </div>
                             <div class="progress mb-2">
                                 <div class="progress-bar" data-appear-progress-animation="{{ $item->porcentaje }}"></div>
