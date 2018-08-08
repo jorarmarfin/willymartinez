@@ -29,9 +29,10 @@ class HomeController extends Controller
         $educacion = $this->drupal->getRequest($this->iduser,'educacion',true);
         $habilidades = $this->drupal->getRequest($this->iduser,'habilidades',true);
         $idiomas = $this->drupal->getRequest($this->iduser,'idiomas',true);
+        $archivo = $this->drupal->getRequest($this->iduser,'archivo',false);
         //$portafolio = $this->drupal->getRequest($this->iduser,'portafolio',true);
 
-        return view('index',compact('configuracion','datos','experiencia','educacion','habilidades','redes','idiomas'));
+        return view('index',compact('configuracion','datos','experiencia','educacion','habilidades','redes','idiomas','archivo'));
     }
     public function PreparaRedes($misredes)
     {
