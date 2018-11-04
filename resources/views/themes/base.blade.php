@@ -383,24 +383,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="section full-width dark sections_style_0 ">
-                            <div class="section_wrapper clearfix">
-                                <div class="items_group clearfix">
-                                    <!-- One full width row-->
-                                    <div class="column one column_hover_color">
-                                        <div class="hover_color" style="background:#47d6fa;">
-                                            <div class="hover_color_bg" style="background:#21437D;">
-                                                <a href="#">
-                                                    <div class="hover_color_wrapper">
-                                                        <h2 style="margin: 20px 0;">WANT TO BUY MY BOOKS? CLICK HERE</h2>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="section the_content">
                             <div class="section_wrapper">
                                 <div class="the_content_wrapper"></div>
