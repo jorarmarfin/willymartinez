@@ -176,13 +176,13 @@ a.mfn-link-6:before {
 	color: #fff;
 }
 #Top_bar .menu>li.current-menu-item>a, #Top_bar .menu>li.current_page_item>a, #Top_bar .menu>li.current-menu-ancestor>a, #Top_bar .menu>li.current_page_ancestor>a, #Top_bar .menu>li.hover>a {
-	color: #ebc076;
+	color: #21437D;
 }
 #Top_bar .menu>li a:after {
-	background: #ebc076;
+	background: #21437D;
 }
 .menu-highlight #Top_bar #menu>ul>li.current-menu-item>a, .menu-highlight #Top_bar #menu>ul>li.current_page_item>a, .menu-highlight #Top_bar #menu>ul>li.current-menu-ancestor>a, .menu-highlight #Top_bar #menu>ul>li.current_page_ancestor>a, .menu-highlight #Top_bar #menu>ul>li.hover>a {
-	background: #ebc076;
+	background: #21437D;
 }
 #Top_bar .menu>li ul {
 	background-color: #F2F2F2;
@@ -194,7 +194,7 @@ a.mfn-link-6:before {
 	color: #2e2e2e;
 }
 #Top_bar .search_wrapper {
-	background: #ebc076;
+	background: #21437D;
 }
 #Subheader .title {
 	color: #888888;
