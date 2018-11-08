@@ -82,7 +82,7 @@
             <div class="column one-second column_column">
                 <div class="column_attr align_center animate" data-anim-type="fadeInRight">
                     <div style="margin: 0 5%;">
-                        <h2 style="margin-top: 15px;">BIOGRAFÍA
+                        <h2 style="margin-top: 15px; font-family: 'Poiret One', cursive;">BIOGRAFÍA
                             <br>
                             WILLY MARTINEZ
                             <br>

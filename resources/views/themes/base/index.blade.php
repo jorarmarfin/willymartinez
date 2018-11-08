@@ -18,6 +18,7 @@
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,400italic,700'>
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Crimson+Text:100,300,400,400italic,700'>
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Patua+One:100,300,400,400italic,700'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poiret+One" >
     <link rel="stylesheet" href="{{ asset('css/all.css') }}">
     <!-- CSS -->
     <link rel='stylesheet' href='{{ asset("css/global.css") }}'>
