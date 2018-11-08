@@ -57,8 +57,8 @@
             <!-- One full width row-->
             <div class="column one column_column">
                 <div class="column_attr align_center">
-                    <h2 style="font-style: italic; margin-bottom: 35px; color: #fff">" La Gloria para Dios, el fruto para mis hermanos Y el gozo de servir en mi corazón "</h2>
-                    <h3 style="color:#fff">1 Juan 1, 1-3.</h3>
+                    <h2 style="font-style: italic; margin-bottom: 35px; color: #fff">" {{ $frases[0]->observacion }} "</h2>
+                    <h3 style="color:#fff">{{ $frases[0]->referencia }}</h3>
                 </div>
             </div>
         </div>
@@ -109,60 +109,26 @@
                     <h2 class="hrmargin_0">ÚLTIMOS EVENTOS</h2>
                 </div>
             </div>
+            @foreach ($eventos as $evento)                
             <!-- One Third (1/3) Column -->
             <div class="column one-third column_article_box">
                 <div class="article_box">
                     <!-- Animated area -->
                     <div class="animate" data-anim-type="zoomIn">
                         <a href="content/book/events.html">
-                            <div class="photo_wrapper"><img class="scale-with-grid" src="images/home_book_events1.jpg" alt="Aenean ferme ntum elit eget" />
+                            <div class="photo_wrapper"><img class="scale-with-grid" src="{{ $evento->imagen }}" alt="Aenean ferme ntum elit eget" />
                             </div>
                             <div class="desc_wrapper">
                                 <p>
-                                    Aliqu tincid mauris
+                                    <i class="fas fa-calendar-alt"></i>  {{ $evento->fecha }}
                                 </p>
-                                <h4>Aenean ferme ntum elit eget</h4><i class="icon-right-open themecolor"></i>
+                                <h4>{{ $evento->titulo }} </h4>{{ $evento->resumen }}
                             </div>
                         </a>
                     </div>
                 </div>
             </div>
-            <!-- One Third (1/3) Column -->
-            <div class="column one-third column_article_box">
-                <div class="article_box">
-                    <!-- Animated area -->
-                    <div class="animate" data-anim-type="zoomIn">
-                        <a href="content/book/events.html">
-                            <div class="photo_wrapper"><img class="scale-with-grid" src="images/home_book_events2.jpg" alt="Nulla imperdiet sit amet" />
-                            </div>
-                            <div class="desc_wrapper">
-                                <p>
-                                    Lorem ipsum primi
-                                </p>
-                                <h4>Nulla imperdiet sit amet</h4><i class="icon-right-open themecolor"></i>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- One Third (1/3) Column -->
-            <div class="column one-third column_article_box">
-                <div class="article_box">
-                    <!-- Animated area -->
-                    <div class="animate" data-anim-type="zoomIn">
-                        <a href="content/book/events.html">
-                            <div class="photo_wrapper"><img class="scale-with-grid" src="images/home_book_events3.jpg" alt="Vitae adipiscing turpis aen" />
-                            </div>
-                            <div class="desc_wrapper">
-                                <p>
-                                    Nec malesuada fames
-                                </p>
-                                <h4>Vitae adipiscing turpis aen</h4><i class="icon-right-open themecolor"></i>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>
@@ -241,8 +207,8 @@
             <!-- One full width row-->
             <div class="column one column_column">
                 <div class="column_attr align_center">
-                    <h2 style="font-style: italic; margin-bottom: 35px; color:#fff">" Firmes en la Fe "</h2>
-                    <h3 style="color:white">W. M.</h3>
+                    <h2 style="font-style: italic; margin-bottom: 35px; color:#fff">{{ $frases[1]->observacion }}</h2>
+                    <h3 style="color:white">{{ $frases[1]->referencia }}</h3>
                 </div>
             </div>
         </div>

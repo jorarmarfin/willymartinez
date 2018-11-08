@@ -18,8 +18,11 @@ class HomeController extends Controller
 	{
 		$mensaje = $this->drupal->getRequest('mensajes',false);
 		$productos = $this->drupal->getRequest('productos',true);
+		$eventos = $this->drupal->getRequest('eventos',true);
 		$biografia = $this->drupal->getRequest('nid',false,3);
-		return view('index',compact('mensaje','productos','biografia'));
+		$frases[0] = $this->drupal->getRequest('nid',false,5);
+		$frases[1] = $this->drupal->getRequest('nid',false,6);
+		return view('index',compact('mensaje','productos','biografia','frases','eventos'));
 	}
 	
 }
