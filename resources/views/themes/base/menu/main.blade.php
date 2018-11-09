@@ -12,12 +12,12 @@
                 </a>
             </li>
             <li class="@if ($current=='bio') current_page_item  @endif">
-                <a href="#"><span>
+                <a href="{{ route('biografia') }}"><span>
                     <i style="font-size: 80%;" class="fas fa-feather"></i> Biografía</span>
                 </a>
             </li>
             <li class="@if ($current=='eventos') current_page_item  @endif">
-                <a href="#"><span>
+                <a href="{{ route('eventos') }}"><span>
                     <i style="font-size: 80%;" class="fas fa-calendar-alt"></i> Eventos</span>
                 </a>
             </li>
@@ -34,6 +34,6 @@
         </ul>
     </nav>
     <a class="responsive-menu-toggle" href="#">
-        <i class='fas fa-menu'></i>
+        <i class='fas fa-menu' style="color:white"></i>
     </a>
 </div>

@@ -30,7 +30,7 @@
                 <!-- Animated area -->
                 <div class="animate" data-anim-type="zoomIn">
                     <div class="icon_box icon_position_top no_border">
-                        <a href="content/book/books.html">
+                        <a href="{{ route('productos') }}">
                             <div class="image_wrapper"><img src="{{ $producto->imagen }}" alt="" class="scale-with-grid" />
                             </div>
                             <div class="desc_wrapper">
@@ -92,7 +92,7 @@
                         <p class="hrmargin_b_30">
                             {!! $biografia->descripcion !!}
                         </p>
-                        <a class="mfn-link mfn-link-4 " href="content/book/bio.html" data-hover="READ MORE"><span data-hover="READ MORE">Leer más</span></a>
+                        <a class="mfn-link mfn-link-4 " href="{{ route('biografia') }}" data-hover="READ MORE"><span data-hover="READ MORE">Leer más</span></a>
                     </div>
                 </div>
             </div>
@@ -100,7 +100,7 @@
     </div>
 </div>
 {{-- Eventos --}}
-<div class="section" style="padding-top:70px; padding-bottom:60px; background-color:#ededed">
+<div class="section" style="padding-top:50px; padding-bottom:60px; background-color:#ededed">
     <div class="section_wrapper clearfix">
         <div class="items_group clearfix">
             <!-- One full width row-->
@@ -115,8 +115,9 @@
                 <div class="article_box">
                     <!-- Animated area -->
                     <div class="animate" data-anim-type="zoomIn">
-                        <a href="content/book/events.html">
-                            <div class="photo_wrapper"><img class="scale-with-grid" src="{{ $evento->imagen }}" alt="Aenean ferme ntum elit eget" />
+                        <a href="{{ route('eventos') }}">
+                            <div class="photo_wrapper">
+                                <img class="scale-with-grid" src="{{ $evento->imagen }}" alt="{{ $evento->titulo }}" />
                             </div>
                             <div class="desc_wrapper">
                                 <p>
