@@ -6,3 +6,4 @@ Route::get('/biografia', 'HomeController@biografia')->name('biografia');
 Route::get('/eventos', 'HomeController@eventos')->name('eventos');
 Route::get('/blog', 'HomeController@blog')->name('blog');
 Route::get('/contactame', 'HomeController@contactame')->name('contactame');
+Route::post('email', 'HomeController@email')->name('email');

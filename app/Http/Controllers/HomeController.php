@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactEmail;
 use App\Repositories\Drupal;
 use Illuminate\Http\Request;
+use Styde\Html\Facades\Alert;
+use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\FormContactRequest;
 
 class HomeController extends Controller
 {
@@ -57,9 +61,19 @@ class HomeController extends Controller
 	}
 	public function contactame()
 	{
-		$blog = $this->drupal->getRequest('blog',true);
+		$contacto = $this->drupal->getRequest('nid',false,20);
 		$current = "contactame";
-		return view('contactame',compact('blog','current'));
+		return view('contactame',compact('contacto','current'));
+	}
+	public function email(FormContactRequest $request)
+	{//cristoestavivo@hotmail.com
+		$datos = $request->all();
+		Mail::to('luis.mayta@gmail.com','Informacion')
+				->send(new ContactEmail($datos));
+		
+		Alert::info('Su email ha sido enviado; me pondre en contacto con Ud.');
+		return redirect()->back();
+		
 	}
 	
 }

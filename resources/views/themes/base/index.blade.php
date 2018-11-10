@@ -26,6 +26,9 @@
     <link rel='stylesheet' href='{{ asset("css/book.css") }}'>
     <link rel='stylesheet' href='{{ asset("css/custom.css") }}'>
 
+    {{-- ReCaptcha --}}
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
 </head>
 
 <body class="home page layout-full-width header-creative header-open minimalist-header sticky-white no-content-padding">

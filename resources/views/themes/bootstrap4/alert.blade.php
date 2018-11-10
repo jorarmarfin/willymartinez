@@ -1,10 +1,15 @@
 @foreach ($messages as $msg)
-    <div class="alert alert-{{ $msg['type'] }} alert-dismissible fade show" role="alert">
+    <div class="alert alert_{{ $msg['type'] }} alert-dismissible fade show" role="alert">
+        <div class="alert_icon">
+            <i class="fas fa-check"></i>
+        </div>
         <strong>{{ $msg['message'] }}</strong>
     @if (!empty ($msg['details']))
         {{ $msg['details'] }}
     @endif
+    <div class="alert_wrapper">
     {!! $msg['html'] !!}
+    </div>
     @if (!empty ($msg['items']))
         <ul>
           @foreach ($msg['items'] as $item)
@@ -19,8 +24,6 @@
             @endforeach
         </p>
     @endif
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
+        <a href="#" class="close"><i class="fas fa-times"></i></a>
     </div>
 @endforeach
