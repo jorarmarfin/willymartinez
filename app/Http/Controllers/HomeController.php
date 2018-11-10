@@ -66,9 +66,9 @@ class HomeController extends Controller
 		return view('contactame',compact('contacto','current'));
 	}
 	public function email(FormContactRequest $request)
-	{//cristoestavivo@hotmail.com
+	{
 		$datos = $request->all();
-		Mail::to('luis.mayta@gmail.com','Informacion')
+		Mail::to('cristoestavivo@hotmail.com','Informacion')
 				->send(new ContactEmail($datos));
 		
 		Alert::info('Su email ha sido enviado; me pondre en contacto con Ud.');
