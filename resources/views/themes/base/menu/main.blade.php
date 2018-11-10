@@ -34,6 +34,6 @@
         </ul>
     </nav>
     <a class="responsive-menu-toggle" href="#">
-        <i class='fas fa-menu' style="color:white"></i>
+        <i class='fas fa-bars' style="color:white"></i>
     </a>
 </div>
