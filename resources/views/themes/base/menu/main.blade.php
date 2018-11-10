@@ -22,12 +22,12 @@
                 </a>
             </li>
             <li class="@if ($current=='blog') current_page_item  @endif">
-                <a href="#"><span>
+                <a href="{{ route('blog') }}"><span>
                     <i style="font-size: 80%;" class="fab fa-blogger"></i> Blog</span>
                 </a>
             </li>
             <li class="@if ($current=='contactame') current_page_item  @endif">
-                <a href="#"><span>
+                <a href="{{ route('contactame') }}"><span>
                     <i style="font-size: 80%;" class="fas fa-mobile-alt"></i> Contáctame</span>
                 </a>
             </li>

@@ -110,8 +110,8 @@
                 </div>
             </div>
             @foreach ($eventos as $evento)                
-            <!-- One Third (1/3) Column -->
-            <div class="column one-third column_article_box">
+            <!-- One Third (1/2) Column -->
+            <div class="column one-second column_article_box">
                 <div class="article_box">
                     <!-- Animated area -->
                     <div class="animate" data-anim-type="zoomIn">
@@ -140,52 +140,20 @@
             <!-- Two Third (2/3) Column -->
             <div class="column two-third column_column">
                 <div class="column_attr ">
-                    <h2 style="margin: 0 0 50px; text-align: center;">BLOG</h2>
+                    <h2 style="margin: 0 0 50px; text-align: center;">BLOG - NOTICIAS - REFLEXIONES</h2>
+                    @foreach ($blog as $item)                        
                     <!-- One Second (1/2) Column -->
                     <div class="column one-second">
                         <div class="blockquote">
-                            <blockquote>
-                                Vitae adipiscing turpis. Aenean ligula nibh, molestie id viverra a, dapibus at dolor. In iaculis viverra neque, ac eleifend ante lobortis id. In in leo ultrices posuere ante viverra ipsum ...
-                            </blockquote>
                             <p class="author">
-                                <i class="icon-user"></i><a href="#">Ultrices Posuere</a>
+                                <i class="icon-user"></i><a href="#">{{ $item->titulo }}</a>
                             </p>
+                            <blockquote>
+                                {!! $item->resumen !!}
+                            </blockquote>
                         </div>
                     </div>
-                    <!-- One Second (1/2) Column -->
-                    <div class="column one-second">
-                        <div class="blockquote">
-                            <blockquote>
-                                Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fer commod mentum in, dolor. Pellentesque facilisis ...
-                            </blockquote>
-                            <p class="author">
-                                <i class="icon-user"></i><a href="#">Aenean Ligula</a>
-                            </p>
-                        </div>
-                    </div>
-                    <hr class="no_line" />
-                    <!-- One Second (1/2) Column -->
-                    <div class="column one-second">
-                        <div class="blockquote">
-                            <blockquote>
-                                Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi. Aliquam erat ac ipsum. Integer aliquam ...
-                            </blockquote>
-                            <p class="author">
-                                <i class="icon-user"></i><a href="#">Morbi Tristique</a>
-                            </p>
-                        </div>
-                    </div>
-                    <!-- One Second (1/2) Column -->
-                    <div class="column one-second">
-                        <div class="blockquote">
-                            <blockquote>
-                                Cum sociis natoque penatibus et ultrices volutpat. Nullam wisi ultricies a, gravida vitae, dapibus risus ante sodales lectus blandit eu, tempor diam pede cursus vitae, ultricies eu, faucibus quis ...
-                            </blockquote>
-                            <p class="author">
-                                <i class="icon-user"></i><a href="#">Luctus Diam</a>
-                            </p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <!-- One Third (1/3) Column -->
@@ -193,7 +161,7 @@
                 <!-- Animated area -->
                 <div class="animate" data-anim-type="fadeInRight">
                     <div class="image_frame no_link scale-with-grid no_border">
-                        <div class="image_wrapper"><img class="scale-with-grid" src="images/home_book_book_big.png" alt="">
+                        <div class="image_wrapper"><img class="scale-with-grid" src="images/blog.jpg" alt="">
                         </div>
                     </div>
                 </div>
