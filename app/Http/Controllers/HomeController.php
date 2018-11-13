@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\ContactEmail;
 use App\Repositories\Drupal;
+use App\Repositories\Youtube;
 use Illuminate\Http\Request;
 use Styde\Html\Facades\Alert;
 use Illuminate\Support\Facades\Mail;
@@ -12,10 +13,12 @@ use App\Http\Requests\FormContactRequest;
 class HomeController extends Controller
 {
     private $drupal;
+    private $youtube;
     
-	public function __construct(Drupal $drupal)
+	public function __construct(Drupal $drupal, Youtube $youtube)
 	{
 		$this->drupal = $drupal;
+		$this->youtube = $youtube;
 	}
 
 	public function index()
@@ -74,6 +77,11 @@ class HomeController extends Controller
 		Alert::info('Su email ha sido enviado; me pondre en contacto con Ud.');
 		return redirect()->back();
 		
+	}
+	public function canalyoutube()
+	{
+		$videos = $this->youtube->getVideos();
+		dd($videos);
 	}
 	
 }
