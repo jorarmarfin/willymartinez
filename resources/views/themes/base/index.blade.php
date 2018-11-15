@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Favicons -->
-    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
 
     <!-- FONTS -->
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,400italic,700'>
@@ -43,7 +43,7 @@
                     <div class="top_bar_left">
                         <!-- Logo-->
                         <div class="logo">
-                            <h1><a id="logo" href="{{ route('index.home') }}" title="BeBook - BeTheme"><img class="scale-with-grid" src="images/book.png" alt="BeBook - BeTheme" /></a></h1>
+                            <h1><a id="logo" href="{{ route('index.home') }}" title="Willy Martinez Sanchez"><img class="scale-with-grid" src="{{ asset('images/book.png') }}" alt="Willy Martinez Sanchez" /></a></h1>
                         </div>
                         <!-- Main menu-->
                         @include('themes.base.menu.main')

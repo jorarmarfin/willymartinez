@@ -22,7 +22,7 @@ class Drupal
 
 	public function getRequest($name,$isarray=false,$nid=null)
 	{
-		$retVal = ($name=='nid' || $name=='galeria') ? '/'.$nid : '' ;
+		$retVal = ($name=='nid') ? '/'.$nid : '' ;
 		$sufijo = $retVal.'?_format=json';
 		$url = '/api/'.$name.$sufijo;
 		$response = $this->client->request('GET',$url);
