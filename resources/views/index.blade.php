@@ -174,11 +174,35 @@
     <div class="section_wrapper clearfix">
         <div class="items_group clearfix">
             <!-- One full width row-->
-            <div class="column one-second column_column">
+            <div class="column one-third column_column">
                 <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fwilly.martinez.sanchez.2016%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=2006427016273865" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
             </div>
-            <div class="column one-second column_column">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLC9184C712E41A65C" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="column one-third column_column">
+                <!-- Recent posts -->
+                <aside class="widget widget_mfn_recent_posts">
+                    <h4>Latest posts</h4>
+                    <div class="Recent_posts">
+                        <ul>
+                            @foreach ($videos as $video)                                
+                            <li class="post ">
+                                <a href="https://www.youtube.com/watch?v=@isset($video['id']['videoId']){{ $video['id']['videoId'] }}@endisset">
+                                    <div class="photo"><img width="80" height="80" src="{{ $video['snippet']['thumbnails']['medium']['url'] }}" class="scale-with-grid wp-post-image" alt="beauty_portfolio_2"><span class="c">4</span>
+                                    </div>
+                                    <div class="desc">
+                                        <h6>{{ $video['snippet']['title'] }}</h6><span class="date"><i class="icon-clock"></i>
+                                            {{ substr($video['snippet']['publishedAt'],0,10) }}
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+            <div class="column one-third column_column">
+                <a class="twitter-timeline" data-height="500px" href="https://twitter.com/WillyMartinezS1?ref_src=twsrc%5Etfw">Tweets by WillyMartinezS1</a> 
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
         </div>
     </div>
