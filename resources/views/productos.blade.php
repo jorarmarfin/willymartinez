@@ -64,7 +64,7 @@
             <!-- One Fourth (1/4) Column -->
             <div class="column one-fourth column_icon_box">
                 <div class="icon_box icon_position_top no_border">
-                    <a href="#">
+                    <a href="{{ route('producto',$producto->nid) }}">
                         <div class="image_wrapper"><img src="{{ $producto->imagen }}" alt="" class="scale-with-grid" />
                         </div>
                         <div class="desc_wrapper">

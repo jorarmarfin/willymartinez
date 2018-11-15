@@ -169,6 +169,17 @@
         </div>
     </div>
 </div>
+{{-- Redes --}}
+<div class="section" >
+    <div class="section_wrapper clearfix">
+        <div class="items_group clearfix">
+            <!-- One full width row-->
+            <div class="column one column_column">
+                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fwilly.martinez.sanchez.2016%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=2006427016273865" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
 {{-- Frase 2 --}}
 <div class="section" style="padding-top:70px; padding-bottom:20px; background-color:#000046">
     <div class="section_wrapper clearfix">
