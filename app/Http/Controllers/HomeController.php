@@ -83,5 +83,9 @@ class HomeController extends Controller
 		$videos = $this->youtube->getVideos();
 		dd($videos);
 	}
+	public function pedido()
+	{
+		$this->drupal->postRequest();
+	}
 	
 }

@@ -8,3 +8,4 @@ Route::get('/blog', 'HomeController@blog')->name('blog');
 Route::get('/contactame', 'HomeController@contactame')->name('contactame');
 Route::post('email', 'HomeController@email')->name('email');
 Route::get('canal-youtube', 'HomeController@canalyoutube')->name('youtube');
+Route::get('pedido', 'HomeController@pedido')->name('pedido');

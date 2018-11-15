@@ -8,12 +8,14 @@ use GuzzleHttp\Client;
 */
 class Drupal
 {
+	private $url;
 	private $client;
 
 	public function __construct()
 	{
+		$this->url= 'http://intranet.willymartinezsanchez.com';
 		$this->client = new Client([
-			'base_uri' => 'http://intranet.willymartinezsanchez.com',
+			'base_uri' => $this->url,
 			'auth' => ['apirest', '35@C-5-:Wv-oEdre2(/Z']
 		]);
 	}
@@ -29,5 +31,26 @@ class Drupal
 
 		if($isarray)return $data;
 		else return $data[0];
+	}
+	public function postRequest()
+	{
+		$mensaje='
+			{
+				"_links":{
+					"type":{
+						"href":"http://mydrupal.test/rest/type/node/pedidos"
+					}
+				},
+				"title":[{"value":"tarea prueba 5"}],
+				"body":[{"value":"tarea de prueba 5"}]
+			
+			}
+		';
+		//$this->client->post();
+		$response = $this->client->post('/entity/node', array('body' => json_encode($mensaje)));
+ 
+		$httpStatusCode = $response->getStatusCode();
+		$result = $response->json();
+		dd($result);
 	}
 }
