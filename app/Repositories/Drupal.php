@@ -32,25 +32,43 @@ class Drupal
 		if($isarray)return $data;
 		else return $data[0];
 	}
-	public function postRequest()
+	public function postRequest($action='create',$nid=0)
 	{
-		$mensaje='
-			{
-				"_links":{
-					"type":{
-						"href":"http://mydrupal.test/rest/type/node/pedidos"
-					}
-				},
-				"title":[{"value":"tarea prueba 5"}],
-				"body":[{"value":"tarea de prueba 5"}]
-			
-			}
-		';
-		//$this->client->post();
-		$response = $this->client->post('/entity/node', array('body' => json_encode($mensaje)));
- 
-		$httpStatusCode = $response->getStatusCode();
-		$result = $response->json();
-		dd($result);
+		$url = $this->url;
+		$serialized_entity = json_encode([
+			'_links' => ['type' => [
+				'href' => $url.'/rest/type/node/pedidos'
+			]],
+			'title' => [['value' => 'laravel titulo4']],
+			'body' => [['value' => 'laravel cuerpo4']],
+		  ]);
+		switch ($action) {
+			case 'create':
+				$response = $this->client->post(
+					'/node?_format=hal_json', 
+					[
+						'body' => $serialized_entity,
+						'headers' => [
+							'Content-Type' => 'application/hal+json',
+						]
+					]
+				);
+				break;
+			case 'delete':
+				$response = $this->client->delete(
+					"/node/$nid?_format=hal_json", 
+					[
+						'headers' => [
+							'Content-Type' => 'application/hal+json',
+						]
+					]
+				);
+				break;
+			default:
+				# code...
+				break;
+		}
+		#dd($response);
+		dd($response->getStatusCode());
 	}
 }

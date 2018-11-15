@@ -85,7 +85,9 @@ class HomeController extends Controller
 	}
 	public function pedido()
 	{
-		$this->drupal->postRequest();
+		//204 -> delete
+		//201 -> create
+		$this->drupal->postRequest('delete',3);
 	}
 	
 }
