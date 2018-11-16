@@ -180,7 +180,7 @@
             <div class="column one-third column_column">
                 <!-- Recent posts -->
                 <aside class="widget widget_mfn_recent_posts">
-                    <h4>Latest posts</h4>
+                    <h4>Últimos videos</h4>
                     <div class="Recent_posts">
                         <ul>
                             @foreach ($videos as $video)                                

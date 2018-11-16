@@ -13,8 +13,8 @@ class Youtube
 
 	public function __construct()
 	{
-        $this->key = env('API_KEY_YOUTUBE');
-		$this->channel = env('ID_CHANNEL');
+        $this->key = env('API_KEY_YOUTUBE_WILLY');
+		$this->channel = env('ID_CHANNEL_WILLY');
 		$url = "https://www.googleapis.com/youtube/v3/search?key=$this->key&channelId=$this->channel&part=snippet,id&order=date&maxResults=9";
 		$json = file_get_contents($url);
 		$this->obj = json_decode($json, true);

@@ -43,5 +43,56 @@
         </div>
     </div>
 </div>
-
+<div class="section mcb-section  section-border-top " style="padding-top:40px; padding-bottom:0px; background-color:#f9f9f9">
+    <div class="section_wrapper mcb-section-inner">
+        <div class="wrap mcb-wrap one valign-top clearfix">
+            <div class="mcb-wrap-inner">
+                <div class="column mcb-column one-third column_column">
+                    <div class="column_attr clearfix align_right">
+                        <h2>REALIZA TU PEDIDO</h2>
+                        <p class="big">
+                            Ingrese sus datos y se te enviará un email con las instrucciones para poder realizar el deposito y adquirir este producto</span> !
+                        </p>
+                        <p class="big" style="color: #a8a8a8;">
+                            Mis redes sociales:
+                        </p>
+                        <a href="https://www.facebook.com/willy.martinezsanchez" class="icon_bar  icon_bar_facebook icon_bar_small" target="_blank">
+                            <span class="t"><i class="fab fa-facebook-f"></i></span>
+                            <span class="b"><i class="fab fa-facebook-f"></i></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="column mcb-column two-third column_column">
+                    <div id="contactWrapper">
+                        {!! Form::open(['route' => 'pedido', 'method' => 'POST','id'=>'contactform']) !!}
+                            <!-- One Second (1/2) Column -->
+                            <div class="column one-second">
+                                {!! Form::text('nombre',null,['placeholder'=>'Nombre completo','size'=>'40','aria-required'=>'true']) !!}
+                            </div>
+                            <!-- One Second (1/2) Column -->
+                            <div class="column one-second">
+                                {!! Form::email('email',null,['placeholder'=>'Ingresar Email','size'=>'40','aria-required'=>'true']) !!}
+                            </div>
+                            <div class="column one-fifth">
+                                {!! Form::number('cantidad',null,['placeholder'=>'Cantidad','size'=>'40','aria-required'=>'true']) !!}
+                            </div>
+                            <!-- One Second (1/2) Column -->
+                            <div class="column four-fifth">
+                                {!! Form::text('telefono',null,['placeholder'=>'Ingresar sus números de telefono','size'=>'40','aria-required'=>'true']) !!}
+                            </div>
+                            <div class="column one">
+                                {!! Form::textarea('descripcion',null,['placeholder'=>'Ingrese descripcion','rows'=>'10','style'=>'width:100%;','aria-required'=>'true']) !!}
+                            </div>
+                            <div class="column one">
+                                {!! Form::hidden('nid',$producto->nid) !!}
+                                {!! Form::hidden('uuid',$producto->uuid) !!}
+                                {!! Form::submit('ENVIAR',['style'=>'background-color:#000046']) !!}
+                            </div>
+                        {!! Form::close() !!}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

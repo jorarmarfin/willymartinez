@@ -90,11 +90,45 @@ class HomeController extends Controller
 		$videos = $this->youtube->getVideos();
 		dd($videos);
 	}
-	public function pedido()
+	public function pedido(Request $request)
 	{
+		$data = $request->all();
+		$url = $this->drupal->getUrl();
+		#dd($data);
+		$pedido = [
+			'title' => [['value' => $request->nombre]],
+			'body' => [['value' => $request->descripcion]],
+			'field_email' => [['value' => $request->email]],
+			'field_cantidad' => [['value' => $request->cantidad]],
+			'field_telefono' => [['value' => $request->telefono]],
+			'field_token' => [['value' => $request->_token]],
+			'field_producto' => [['value' => $request->nid]],
+			'_embedded'=>[
+				"$url/rest/relation/node/pedidos/field_producto"=> [
+					[
+					  "_links" => [
+						"self" => [
+						  "href" => "$url/node/$request->nid?_format=hal_json"
+						],
+						"type" => [
+						  "href" => "$url/rest/type/node/productos"
+						]
+					  ],
+					  "uuid" => [
+						[
+						  "value" => "$request->uuid"
+						]
+					  ]
+					]
+				  ]
+				]
+		];
+		// 'nid' => [['value' => $request->nid]],
+		//dd($pedido);
 		//204 -> delete
 		//201 -> create
-		$this->drupal->postRequest('delete',3);
+		#	dd($this->drupal->getUrl());
+		$this->drupal->postRequest('create',$pedido,$request->nid);
 	}
 	
 }

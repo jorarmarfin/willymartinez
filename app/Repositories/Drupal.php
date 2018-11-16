@@ -19,7 +19,10 @@ class Drupal
 			'auth' => ['apirest', '35@C-5-:Wv-oEdre2(/Z']
 		]);
 	}
-
+	public function getUrl()
+	{
+		return $this->url;
+	}
 	public function getRequest($name,$isarray=false,$nid=null)
 	{
 		$retVal = ($name=='nid') ? '/'.$nid : '' ;
@@ -32,16 +35,43 @@ class Drupal
 		if($isarray)return $data;
 		else return $data[0];
 	}
-	public function postRequest($action='create',$nid=0)
+	public function postRequest($action='create',$data=[],$nid=0)
 	{
 		$url = $this->url;
 		$serialized_entity = json_encode([
-			'_links' => ['type' => [
-				'href' => $url.'/rest/type/node/pedidos'
-			]],
+			'_links' => [
+				'type' => ['href' => $url.'/rest/type/node/pedidos'],
+				"http://intranet.willymartinezsanchez.com/rest/relation/node/pedidos/field_producto"=> [
+					["href"=>"http://intranet.willymartinezsanchez.com/node/37?_format=hal_json"]
+				]
+			],
 			'title' => [['value' => 'laravel titulo4']],
 			'body' => [['value' => 'laravel cuerpo4']],
+			'_embedded'=>[
+				"http://intranet.willymartinezsanchez.com/rest/relation/node/pedidos/field_producto"=> [
+					[
+					  "_links" => [
+						"self" => [
+						  "href" => "http://intranet.willymartinezsanchez.com/node/37?_format=hal_json"
+						],
+						"type" => [
+						  "href" => "http://intranet.willymartinezsanchez.com/rest/type/node/productos"
+						]
+					  ],
+					  "uuid" => [
+						[
+						  "value" => "b7afe06e-e01d-4e5e-b45f-7768f240474a"
+						]
+					  ]
+					]
+				  ]
+				]
 		  ]);
+		$serialized_entity = array_add($data,'_links' , [
+			'type' => ['href' => $url.'/rest/type/node/pedidos'],
+			$url.'/relation/node/pedidos/field_producto'=>['href'=>$url.'/node/'.$nid.'?_format=hal_json']
+			]);
+		$serialized_entity = json_encode($serialized_entity);
 		switch ($action) {
 			case 'create':
 				$response = $this->client->post(
@@ -68,7 +98,6 @@ class Drupal
 				# code...
 				break;
 		}
-		#dd($response);
-		dd($response->getStatusCode());
+		return $response->getStatusCode();
 	}
 }
