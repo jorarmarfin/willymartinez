@@ -10,3 +10,4 @@ Route::post('email', 'HomeController@email')->name('email');
 Route::get('producto/{nid}', 'HomeController@producto')->name('producto');
 Route::get('canal-youtube', 'HomeController@canalyoutube')->name('youtube');
 Route::get('pedido', 'HomeController@pedido')->name('pedido');
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
