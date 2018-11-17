@@ -128,7 +128,10 @@ class HomeController extends Controller
 		//204 -> delete
 		//201 -> create
 		#	dd($this->drupal->getUrl());
-		$this->drupal->postRequest('create',$pedido,$request->nid);
+		$result = $this->drupal->postRequest('create',$pedido,$request->nid);
+		$mensaje = ($result=='201') ? 'Su Pedido se ha registrado nos pondremos en contacto con usted para el depósito' : 'Ocurrio un Problema comuniquese con el administrador' ;
+		Alert::info($mensaje);
+		return redirect()->back();
 	}
 	
 }

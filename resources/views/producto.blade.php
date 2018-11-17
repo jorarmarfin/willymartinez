@@ -47,6 +47,35 @@
     <div class="section_wrapper mcb-section-inner">
         <div class="wrap mcb-wrap one valign-top clearfix">
             <div class="mcb-wrap-inner">
+                <div class="column mcb-column one-fourth column_how_it_works ">
+                    <div class="how_it_works has_border">
+                        <div class="image"><img src="http://be.beantownthemes.com/html/theme/images/home_betheme_hiw_1.png" class="scale-with-grid" alt="home_betheme_hiw_1" width="98" height="91"><span class="number">1</span>
+                        </div>
+                        <h4>Paso 1</h4>
+                        <div class="desc">
+                            Realizar pedido con el formulario de abajo.
+                        </div>
+                    </div>
+                </div>
+                <div class="column mcb-column one-fourth column_how_it_works ">
+                    <div class="how_it_works has_border">
+                        <div class="image"><img src="http://be.beantownthemes.com/html/theme/images/home_betheme_hiw_4.png" class="scale-with-grid" alt="home_betheme_hiw_1" width="98" height="91"><span class="number">2</span>
+                        </div>
+                        <h4>Paso 2</h4>
+                        <div class="desc">
+                            Realizar el deposito o transferencia en el banco (Interbank, scotiaBank, BCP).
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section mcb-section  section-border-top " style="padding-top:40px; padding-bottom:0px; background-color:#f9f9f9">
+    <div class="section_wrapper mcb-section-inner">
+        <div class="wrap mcb-wrap one valign-top clearfix">
+            <div class="mcb-wrap-inner">
+                    {!! Alert::render() !!}
                 <div class="column mcb-column one-third column_column">
                     <div class="column_attr clearfix align_right">
                         <h2>REALIZA TU PEDIDO</h2>
