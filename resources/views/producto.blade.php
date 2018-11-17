@@ -28,9 +28,17 @@
             <div class="column one-second column_column">
                 <div class="column_attr ">
                     <h2 style="margin-bottom: 7px; margin-top: 15px;">{{ $producto->titulo }}</h2>
+                    <p>
+                    <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                    <a class="a2a_button_facebook"></a>
+                    <a class="a2a_button_twitter"></a>
+                    </div>
+                    </p>
                     <p class="big themecolor">
                         {{ $producto->categoria }}, {{ $producto->year }}
                     </p>
+                    <p><h1>{{ $producto->precio }}</h1></p>
                     <p>
                         {!! $producto->descripcion !!}
                     </p>
@@ -43,13 +51,14 @@
         </div>
     </div>
 </div>
-<div class="section mcb-section  section-border-top " style="padding-top:40px; padding-bottom:0px; background-color:#f9f9f9">
+
+<div class="section mcb-section  section-border-top " style="padding-top:40px; padding-bottom:0px;">
     <div class="section_wrapper mcb-section-inner">
         <div class="wrap mcb-wrap one valign-top clearfix">
             <div class="mcb-wrap-inner">
-                <div class="column mcb-column one-fourth column_how_it_works ">
+                <div class="column mcb-column one-third column_how_it_works ">
                     <div class="how_it_works has_border">
-                        <div class="image"><img src="http://be.beantownthemes.com/html/theme/images/home_betheme_hiw_1.png" class="scale-with-grid" alt="home_betheme_hiw_1" width="98" height="91"><span class="number">1</span>
+                        <div class="image"><img src="{{ asset('/images/choices.png') }}" class="scale-with-grid" alt="home_betheme_hiw_1" width="98" height="91">
                         </div>
                         <h4>Paso 1</h4>
                         <div class="desc">
@@ -57,13 +66,23 @@
                         </div>
                     </div>
                 </div>
-                <div class="column mcb-column one-fourth column_how_it_works ">
+                <div class="column mcb-column one-third column_how_it_works ">
                     <div class="how_it_works has_border">
-                        <div class="image"><img src="http://be.beantownthemes.com/html/theme/images/home_betheme_hiw_4.png" class="scale-with-grid" alt="home_betheme_hiw_1" width="98" height="91"><span class="number">2</span>
+                        <div class="image"><img src="{{ asset('/images/bank-building.png') }}" class="scale-with-grid" alt="home_betheme_hiw_1" width="98" height="91">
                         </div>
                         <h4>Paso 2</h4>
                         <div class="desc">
-                            Realizar el deposito o transferencia en el banco (Interbank, scotiaBank, BCP).
+                            Realizar el deposito o transferencia en los banco (Interbank, scotiaBank, BCP).
+                        </div>
+                    </div>
+                </div>
+                <div class="column mcb-column one-third column_how_it_works ">
+                    <div class="how_it_works has_border">
+                        <div class="image"><img src="{{ asset('/images/cloud-computing.png') }}" class="scale-with-grid" alt="home_betheme_hiw_1" width="98" height="91">
+                        </div>
+                        <h4>Paso 3</h4>
+                        <div class="desc">
+                            Ir a la seccion de descargas para descargar su pedido
                         </div>
                     </div>
                 </div>
@@ -96,21 +115,21 @@
                         {!! Form::open(['route' => 'pedido', 'method' => 'POST','id'=>'contactform']) !!}
                             <!-- One Second (1/2) Column -->
                             <div class="column one-second">
-                                {!! Form::text('nombre',null,['placeholder'=>'Nombre completo','size'=>'40','aria-required'=>'true']) !!}
+                                {!! Field::text('nombre',null,['placeholder'=>'Nombre completo','size'=>'40','aria-required'=>'true']) !!}
                             </div>
                             <!-- One Second (1/2) Column -->
                             <div class="column one-second">
-                                {!! Form::email('email',null,['placeholder'=>'Ingresar Email','size'=>'40','aria-required'=>'true']) !!}
+                                {!! Field::email('email',null,['placeholder'=>'Ingresar Email','size'=>'40','aria-required'=>'true']) !!}
                             </div>
                             <div class="column one-fifth">
-                                {!! Form::number('cantidad',null,['placeholder'=>'Cantidad','size'=>'40','aria-required'=>'true']) !!}
+                                {!! Field::number('cantidad',null,['placeholder'=>'Cantidad','size'=>'40','aria-required'=>'true']) !!}
                             </div>
                             <!-- One Second (1/2) Column -->
                             <div class="column four-fifth">
-                                {!! Form::text('telefono',null,['placeholder'=>'Ingresar sus números de telefono','size'=>'40','aria-required'=>'true']) !!}
+                                {!! Field::text('telefono',null,['placeholder'=>'Ingresar sus números de telefono','size'=>'40','aria-required'=>'true']) !!}
                             </div>
                             <div class="column one">
-                                {!! Form::textarea('descripcion',null,['placeholder'=>'Ingrese descripcion','rows'=>'10','style'=>'width:100%;','aria-required'=>'true']) !!}
+                                {!! Field::textarea('descripcion',null,['placeholder'=>'Ingrese descripcion','rows'=>'10','style'=>'width:100%;','aria-required'=>'true']) !!}
                             </div>
                             <div class="column one">
                                 {!! Form::hidden('nid',$producto->nid) !!}
@@ -124,4 +143,11 @@
         </div>
     </div>
 </div>
+@endsection
+@section('metatags')
+<meta property="og:title" content="{{ $producto->titulo }}" />
+<meta property="og:type" content="Producto" />
+<meta property="og:url" content="http://www.ejemplo.com/" />
+<meta property="og:image" content="{{ $producto->imagen }}" />
+<meta property="og:description" content="{{ $producto->resumen }}" />
 @endsection

@@ -5,9 +5,9 @@
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
     <title>Willy Martinez Sanchez</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
-
+    <meta name="description" content="Predicador Catolico">
+    <meta name="author" content="Willy Martinez">
+    @yield('metatags')
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -126,7 +126,7 @@
             }
         });
     </script>
-
+    <script async src="https://static.addtoany.com/menu/page.js"></script>
 </body>
 
 </html>

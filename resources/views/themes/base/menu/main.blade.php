@@ -31,6 +31,11 @@
                     <i style="font-size: 80%;" class="fas fa-mobile-alt"></i> Contáctame</span>
                 </a>
             </li>
+            <li class="@if ($current=='descargas') current_page_item  @endif">
+                <a href="{{ route('descargas') }}"><span>
+                    <i style="font-size: 80%;" class="fas fa-download"></i> Descargas</span>
+                </a>
+            </li>
         </ul>
     </nav>
     <a class="responsive-menu-toggle" href="#">

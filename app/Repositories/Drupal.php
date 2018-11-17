@@ -25,7 +25,7 @@ class Drupal
 	}
 	public function getRequest($name,$isarray=false,$nid=null)
 	{
-		$retVal = ($name=='nid') ? '/'.$nid : '' ;
+		$retVal = (str_contains($name, ['nid', 'despacho'])) ? '/'.$nid : '' ;
 		$sufijo = $retVal.'?_format=json';
 		$url = '/api/'.$name.$sufijo;
 		$response = $this->client->request('GET',$url);

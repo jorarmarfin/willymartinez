@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Mail\ContactEmail;
 use App\Repositories\Drupal;
-use App\Repositories\Youtube;
 use Illuminate\Http\Request;
+use App\Repositories\Youtube;
 use Styde\Html\Facades\Alert;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\OrderFormRequest;
 use App\Http\Requests\FormContactRequest;
 
 class HomeController extends Controller
@@ -90,7 +91,7 @@ class HomeController extends Controller
 		$videos = $this->youtube->getVideos();
 		dd($videos);
 	}
-	public function pedido(Request $request)
+	public function pedido(OrderFormRequest $request)
 	{
 		$data = $request->all();
 		$url = $this->drupal->getUrl();
@@ -123,15 +124,21 @@ class HomeController extends Controller
 				  ]
 				]
 		];
-		// 'nid' => [['value' => $request->nid]],
-		//dd($pedido);
-		//204 -> delete
-		//201 -> create
-		#	dd($this->drupal->getUrl());
 		$result = $this->drupal->postRequest('create',$pedido,$request->nid);
 		$mensaje = ($result=='201') ? 'Su Pedido se ha registrado nos pondremos en contacto con usted para el depósito' : 'Ocurrio un Problema comuniquese con el administrador' ;
 		Alert::info($mensaje);
 		return redirect()->back();
+	}
+	public function descargas()
+	{
+		$current = "descargas";
+		return view('descargas',compact('current'));
+	}
+	public function lista(Request $request)
+	{
+		$despacho = $this->drupal->getRequest('despacho',true,$request->codigo);
+		$current = "descargas";
+		return view('descargas',compact('current','despacho'));
 	}
 	
 }
