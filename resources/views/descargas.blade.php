@@ -24,6 +24,7 @@
                     {!! Field::submit('Buscar',['label'=>'']) !!}
                 {!! Form::close() !!}
             </div>
+            @isset($despacho)
             <div class="column one column_column">
                 <table>
                     <tr>
@@ -40,6 +41,7 @@
                     @endforeach
                 </table>
             </div>
+            @endisset
         </div>
     </div>
 </div>
