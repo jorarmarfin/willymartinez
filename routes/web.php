@@ -13,3 +13,4 @@ Route::post('pedido', 'HomeController@pedido')->name('pedido');
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 Route::get('descargas', 'HomeController@descargas')->name('descargas');
 Route::post('lista', 'HomeController@lista')->name('lista');
+Route::get('template', 'HomeController@template')->name('template');

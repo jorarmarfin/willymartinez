@@ -134,6 +134,7 @@
                             <div class="column one">
                                 {!! Form::hidden('nid',$producto->nid) !!}
                                 {!! Form::hidden('uuid',$producto->uuid) !!}
+                                {!! Form::hidden('producto',$producto->titulo) !!}
                                 {!! Form::submit('ENVIAR',['style'=>'background-color:#000046']) !!}
                             </div>
                         {!! Form::close() !!}

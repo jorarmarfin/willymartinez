@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderEmail;
 use App\Mail\ContactEmail;
 use App\Repositories\Drupal;
 use Illuminate\Http\Request;
 use App\Repositories\Youtube;
 use Styde\Html\Facades\Alert;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\DescargaRequest;
 use App\Http\Requests\OrderFormRequest;
 use App\Http\Requests\FormContactRequest;
 
@@ -125,7 +127,12 @@ class HomeController extends Controller
 				]
 		];
 		$result = $this->drupal->postRequest('create',$pedido,$request->nid);
-		$mensaje = ($result=='201') ? 'Su Pedido se ha registrado nos pondremos en contacto con usted para el depósito' : 'Ocurrio un Problema comuniquese con el administrador' ;
+		if ($result=='201') {
+			$mensaje = 'Su Pedido se ha registrado nos pondremos en contacto con usted para el depósito';
+			Mail::to('cristoestavivo@hotmail.com','Informacion')->send(new OrderEmail($data));
+		}else{
+			$mensaje = 'Ocurrio un Problema comuniquese con el administrador';
+		}
 		Alert::info($mensaje);
 		return redirect()->back();
 	}
@@ -134,11 +141,18 @@ class HomeController extends Controller
 		$current = "descargas";
 		return view('descargas',compact('current'));
 	}
-	public function lista(Request $request)
+	public function lista(DescargaRequest $request)
 	{
 		$despacho = $this->drupal->getRequest('despacho',true,$request->codigo);
+		if (count($despacho)==0) {
+			Alert::error('El codigo escrito no es correcto.');
+		}
 		$current = "descargas";
 		return view('descargas',compact('current','despacho'));
+	}
+	public function template()
+	{
+		return view('emails.pedido');
 	}
 	
 }

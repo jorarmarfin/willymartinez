@@ -18,10 +18,17 @@
     <div class="section_wrapper clearfix">
         <div class="wrap mcb-wrap one valign-top clearfix">
             <!-- One Second (1/2) Column -->
+            <div class="column one">
+                {!! Alert::render() !!}
+            </div>
             <div class="column one column_column">
                 {!! Form::open(['route' => 'lista', 'method' => 'POST']) !!}
-                    {!! Field::text('codigo',null,['placeholder'=>'ingresar código token','label'=>'Ingresar código token','style'=>'width:33rem;']) !!}
+                <div class="column one-second">
+                    {!! Field::text('codigo',null,['placeholder'=>'ingresar código token','label'=>'Ingresar código token','style'=>'width:100%;']) !!}
+                </div>
+                <div class="column one-second" style="margin-top: 1.5rem">
                     {!! Field::submit('Buscar',['label'=>'']) !!}
+                </div>
                 {!! Form::close() !!}
             </div>
             @isset($despacho)
@@ -36,7 +43,19 @@
                     <tr>
                         <td>{{ $item->titulo }}</td>
                         <td>{{ $item->pago }}</td>
-                        <td><a href="{{ $item->enlace }}" class="button button_blue button_js"><span class="button_label">Descargar</span></a> </td>
+                        <td>
+                            @if ($item->pago=='Si')
+                                @if ($item->fecha_limite>=date('d-m-Y'))
+                                <a href="{{ $item->enlace }}" download="prueba.mp3" class="button button_blue button_js">
+                                    <span class="button_label">Descargar</span>
+                                </a> 
+                                @else                                    
+                                    Termino el tiempo asignado para descargar
+                                @endif
+                            @else
+                                Esperando pago                                
+                            @endif
+                        </td>
                     </tr>
                     @endforeach
                 </table>
