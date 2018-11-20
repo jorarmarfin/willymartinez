@@ -46,7 +46,7 @@
                         <td>
                             @if ($item->pago=='Si')
                                 @if ($item->fecha_limite>=date('d-m-Y'))
-                                <a href="{{ $item->enlace }}" download="prueba.mp3" class="button button_blue button_js">
+                                <a href="{{ route('archivo',$item->token) }}"  class="button button_blue button_js">
                                     <span class="button_label">Descargar</span>
                                 </a> 
                                 @else                                    
