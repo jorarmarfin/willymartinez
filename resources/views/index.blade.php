@@ -87,7 +87,7 @@
                             WILLY MARTINEZ
                             <br>
                             SANCHEZ</h2>
-                        <h4 style="color: #b38534; margin-bottom: 30px;">{{ $biografia->resumen }}</h4>
+                        <h4 style="color: #8989ea; margin-bottom: 30px;">{{ $biografia->resumen }}</h4>
                         <h3>Experiencia Profesional</h3>
                         <p class="hrmargin_b_30">
                             {!! $biografia->descripcion !!}
@@ -106,7 +106,7 @@
             <!-- One full width row-->
             <div class="column one column_column">
                 <div class="column_attr align_center">
-                    <h2 class="hrmargin_0">ÚLTIMOS EVENTOS</h2>
+                    <h2 class="hrmargin_0">PRÓXIMOS EVENTOS!</h2>
                 </div>
             </div>
             @foreach ($eventos as $evento)                
