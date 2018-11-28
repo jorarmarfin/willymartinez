@@ -35,7 +35,7 @@ class HomeController extends Controller
 		$frases[0] = $this->drupal->getRequest('nid',false,5);
 		$frases[1] = $this->drupal->getRequest('nid',false,6);
 		$current = "inicio";
-		$videos = $this->youtube->getVideosPortada(5); #$videos[0]['snippet']['publishedAt']
+		$videos = $this->youtube->getVideosPortada(4); 
 		return view('index',compact('mensaje','productos','biografia','frases','eventos','blog','current','videos'));
 	}
 	public function productos()

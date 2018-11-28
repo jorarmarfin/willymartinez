@@ -28,7 +28,6 @@
 
     {{-- ReCaptcha --}}
     <script src='https://www.google.com/recaptcha/api.js'></script>
-    {{-- Chat --}}
     <!-- Smartsupp Live Chat script -->
     <script type="text/javascript">
         var _smartsupp = _smartsupp || {};
