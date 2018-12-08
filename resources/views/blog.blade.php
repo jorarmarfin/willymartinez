@@ -20,9 +20,11 @@
             @foreach ($blog as $evento)                
             <!-- One Third (1/3) Column -->
             <!-- Two Third (2/3) Column -->
-            <div class="column two-third column_column">
+            <div class="column one column_column">
                 <div class="column_attr ">
-                    <h2 style="margin-bottom: 7px; margin-top: 7px;">{{ $evento->titulo }}</h2>
+                    <a href="#">
+                        <h2 style="margin-bottom: 7px; margin-top: 7px;">{{ $evento->titulo }}</h2>
+                    </a>
                     <p class="big themecolor">
                         
                     </p>

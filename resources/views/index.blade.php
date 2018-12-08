@@ -146,7 +146,7 @@
                     <div class="column one-second">
                         <div class="blockquote">
                             <p class="author">
-                                <i class="icon-user"></i><a href="#">{{ $item->titulo }}</a>
+                                <i class="icon-user"></i><a href="{{ route('blog') }}">{{ $item->titulo }}</a>
                             </p>
                             <blockquote>
                                 {!! $item->resumen !!}
