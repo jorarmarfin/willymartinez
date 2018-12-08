@@ -51,6 +51,12 @@ class HomeController extends Controller
 		$current = "productos";
 		return view('producto',compact('producto','current'));
 	}
+	public function post($nid)
+	{
+		$post = $this->drupal->getRequest('nid',false,$nid);
+		$current = "blog";
+		return view('post',compact('post','current'));
+	}
 	public function biografia()
 	{
 		$biografia[0] = $this->drupal->getRequest('nid',false,15);

@@ -8,6 +8,7 @@ Route::get('/blog', 'HomeController@blog')->name('blog');
 Route::get('/contactame', 'HomeController@contactame')->name('contactame');
 Route::post('email', 'HomeController@email')->name('email');
 Route::get('producto/{nid}', 'HomeController@producto')->name('producto');
+Route::get('post/{nid}', 'HomeController@post')->name('post');
 Route::get('canal-youtube', 'HomeController@canalyoutube')->name('youtube');
 Route::post('pedido', 'HomeController@pedido')->name('pedido');
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');

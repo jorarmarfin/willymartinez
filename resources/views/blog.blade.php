@@ -22,7 +22,7 @@
             <!-- Two Third (2/3) Column -->
             <div class="column one column_column">
                 <div class="column_attr ">
-                    <a href="#">
+                    <a href="{{ route('post',$evento->nid) }}">
                         <h2 style="margin-bottom: 7px; margin-top: 7px;">{{ $evento->titulo }}</h2>
                     </a>
                     <p class="big themecolor">
