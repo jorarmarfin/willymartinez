@@ -11,6 +11,7 @@ use Styde\Html\Facades\Alert;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\DescargaRequest;
 use App\Http\Requests\OrderFormRequest;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\FormContactRequest;
 
 class HomeController extends Controller
@@ -34,7 +35,7 @@ class HomeController extends Controller
 		$frases[0] = $this->drupal->getRequest('nid',false,5);
 		$frases[1] = $this->drupal->getRequest('nid',false,6);
 		$current = "inicio";
-		$videos = $this->youtube->getVideosPortada(5); #$videos[0]['snippet']['publishedAt']
+		$videos = $this->youtube->getVideosPortada(4); 
 		return view('index',compact('mensaje','productos','biografia','frases','eventos','blog','current','videos'));
 	}
 	public function productos()
@@ -97,7 +98,6 @@ class HomeController extends Controller
 	{
 		$data = $request->all();
 		$url = $this->drupal->getUrl();
-		#dd($data);
 		$pedido = [
 			'title' => [['value' => $request->nombre]],
 			'body' => [['value' => $request->descripcion]],
@@ -129,7 +129,7 @@ class HomeController extends Controller
 		$result = $this->drupal->postRequest('create',$pedido,$request->nid);
 		if ($result=='201') {
 			$mensaje = 'Su Pedido se ha registrado nos pondremos en contacto con usted para el depósito';
-			Mail::to('cristoestavivo@hotmail.com','Informacion')->send(new OrderEmail($data));
+			Mail::to('cristoestavivo@hotmail.com','Informacion')->cc($request->email,'Pedido')->send(new OrderEmail($data));
 		}else{
 			$mensaje = 'Ocurrio un Problema comuniquese con el administrador';
 		}
@@ -149,6 +149,29 @@ class HomeController extends Controller
 		}
 		$current = "descargas";
 		return view('descargas',compact('current','despacho'));
+	}
+	public function archivo($token = '')
+	{
+		$despacho = $this->drupal->getRequest('despacho',true,$token);
+		$permiso = true;
+
+		if (count($despacho)==0) {
+			$mensaje = 'Ingreso un codigo no invalido.';
+			$permiso = false;
+		}else{
+			if($despacho[0]->pago!='Si' || $despacho[0]->fecha_limite<date('d-m-Y')){
+				$mensaje = 'El codigo escrito ya no esta disponible para descarga.';
+				$permiso = false;
+			}
+		}
+		if($permiso){
+			return Storage::disk('s3')->download($despacho[0]->enlace);
+		}else{
+			Alert::error($mensaje);
+			$current = "descargas";
+			return view('descargas',compact('current'));
+		}
+
 	}
 	public function template()
 	{

@@ -132,6 +132,9 @@
                                 {!! Field::textarea('descripcion',null,['placeholder'=>'Ingrese descripcion','rows'=>'10','style'=>'width:100%;','aria-required'=>'true']) !!}
                             </div>
                             <div class="column one">
+                                {!! Recaptcha::render() !!}
+                            </div>
+                            <div class="column one">
                                 {!! Form::hidden('nid',$producto->nid) !!}
                                 {!! Form::hidden('uuid',$producto->uuid) !!}
                                 {!! Form::hidden('producto',$producto->titulo) !!}

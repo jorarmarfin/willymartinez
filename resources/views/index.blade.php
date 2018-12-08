@@ -87,7 +87,7 @@
                             WILLY MARTINEZ
                             <br>
                             SANCHEZ</h2>
-                        <h4 style="color: #b38534; margin-bottom: 30px;">{{ $biografia->resumen }}</h4>
+                        <h4 style="color: #8989ea; margin-bottom: 30px;">{{ $biografia->resumen }}</h4>
                         <h3>Experiencia Profesional</h3>
                         <p class="hrmargin_b_30">
                             {!! $biografia->descripcion !!}
@@ -106,7 +106,7 @@
             <!-- One full width row-->
             <div class="column one column_column">
                 <div class="column_attr align_center">
-                    <h2 class="hrmargin_0">ÚLTIMOS EVENTOS</h2>
+                    <h2 class="hrmargin_0">PRÓXIMOS EVENTOS!</h2>
                 </div>
             </div>
             @foreach ($eventos as $evento)                
@@ -203,6 +203,15 @@
             <div class="column one-third column_column">
                 <a class="twitter-timeline" data-height="500px" href="https://twitter.com/WillyMartinezS1?ref_src=twsrc%5Etfw">Tweets by WillyMartinezS1</a> 
                 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <div class="column one-third column_column">
+                <h4>Donaciones</h4>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_s-xclick" />
+                    <input type="hidden" name="hosted_button_id" value="MLWLMBP2W35QU" />
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                    <img alt="" border="0" src="https://www.paypal.com/en_PE/i/scr/pixel.gif" width="1" height="1" />
+                </form>
             </div>
         </div>
     </div>
