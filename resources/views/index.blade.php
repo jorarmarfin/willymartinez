@@ -2,7 +2,7 @@
 
 @section('content')
 {{-- Mensaje --}}
-<div class="section full-screen " id="start" style="padding-top:0px; padding-bottom:0px; background-color:#1d1813; background-image:url({{ $mensaje->imagen }}); background-repeat:no-repeat; background-position:center; background-attachment:fixed; background-size:cover; -webkit-background-size:cover">
+<div class="section full-screen mensaje" id="start" style="padding-top:0px; padding-bottom:0px; background-color:#1d1813; background-image:url({{ $mensaje->imagen }}); background-repeat:no-repeat; background-position:center; background-attachment:fixed; background-size:cover; -webkit-background-size:cover">
     <div class="section_wrapper clearfix">
         <div class="items_group clearfix">
             <!-- One Second (1) Column -->

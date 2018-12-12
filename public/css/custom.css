@@ -1,3 +1,8 @@
 .desc_wrapper{
     height: 17rem;
 }
+@media only screen and (max-width: 768px) {
+  .mensaje {
+    display: none;
+  }
+}
